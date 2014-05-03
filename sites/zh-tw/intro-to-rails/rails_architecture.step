@@ -1,8 +1,8 @@
 goals {
 
-  goal "Create a database table for topics with a title and a description"
+  goal "做一個資料庫表格來儲存 topic，topic 有 title 和 description。"
 
-  message "In this step we'll learn a bit about Rails architecture. By the end of this step you should understand the following concepts:"
+  message "在這一步我們會學一點 Rails 的架構。最終你應該會瞭解這些觀念："
 
   ul {
     li "Table"
@@ -14,36 +14,38 @@ goals {
 
 explanation {
 
-  h2 "Rails architecture and its relation to the database"
+  h2 "Rails 的架構以及它與資料庫的關聯"
 
   img(src: "img/mvc.png", alt: "MVC")
 
-  message "Rails implements a very specific notion of the **Model/View/Controller** pattern, which guides how you structure your web applications."
+  message "Rails 把 **Model/View/Controller** 的設計模式實作得非常具體，來指引你如何設計你的網路應用程式。"
 
   h3 "Model"
   message <<-MARKDOWN
-* For all the Models we create in RailsBridge, Model objects have a corresponding record in the the database. The name of the table in the database is the plural version of the Model's class name. For example, if the Model is called 'Duck', it will automatically query or write to the 'ducks' table in the database.
-* Methods internal to Rails make it easy to automatically write records to the the database and query the database to get the records again later.
-* The Model is a bridge between the database and your application's code.
+* 我們在 RailsBridge 建立的 Model，其每一個 Model object 都在資料庫裡面有對應的資料。資料庫裡面的表格（table）是 Model 的 class name 的複數形。例如，如果 Model 叫做 'Duck'，就會自動去資料庫讀寫 'ducks' 這個表格。
+* Rails 內部的 methods 讓我們可以很容易把資料寫入到資料庫，之後再從資料庫裡面查詢（query）出來。
+* Model 是介於資料庫和你的程式碼之間的橋樑。
   MARKDOWN
 
   h3 "View"
   message <<-MARKDOWN
-* The View generates the HTML that will be displayed in the browser.
-* View files are written in ERB, a templating language. It contains HTML with Ruby code embedded in it. The ruby variables in the view stand as placeholders for content that will be filled in when a user requests the page.
-* (There are several other templating languages available, but in RailsBridge we always stick to ERB.)
+* View 會產生 HTML 來顯示在瀏覽器。
+* View 檔案是用 ERB 寫的，它是一種樣板語言（Template Language）。裡面是 HTML 加上內嵌的 Ruby 程式碼。View 裡面的 Ruby 的變數便是當使用者要瀏覽該頁面的時候，所要填入的內容。
+* （還有別的樣板語言，但是在 RailsBridge 我們只用 ERB。）
   MARKDOWN
 
   h3 "Controller"
   message <<-MARKDOWN
-* Controllers pass Ruby objects between the Models and the Views.
-* Each url corresponds to a specific method in a Controller.
-* After this step, when you visit any page in your application, that request will be handled by a method in a Controller.
+* Controller 把 Ruby 的 objects 在 Model 和 View 之間傳來傳去。
+* 每一個 URL 都對應到 Controller 裡面的某一個特定的 method。
+* 在這一步驟以後，當你打開你應用程式裡面的任何一個頁面，該請求（request）會被某個 Controller 的 method 處理。
   MARKDOWN
 
   message <<-MARKDOWN
-When Models, Views and Controllers are all put together, they follow a pattern: Given a URL, Rails will look up which Controller method (also called an "Action") to use. The Controller Action will use methods in a corresponding Model. The Model will need to read or write to the database, and return an object containing that data to the Controller. The Controller will take that object and pass it to the View. (Actions normally have a corresponding View file, and Rails will automatically find and use that file.)
+當我們把 Models、Views、Controllers 放在一起的時候，他們會遵循以下的模式：
 
-Models, Views and Controllers each have specific jobs.  Separating responsibilities like this make it easier to develop, especially as it gets bigger. (When each file has a clear responsibility it's easier to fix problems and add new features.)
+給一個 URL，Rails 會去檢查要使用哪一個 Controller 裡面的 method（又稱為 "Action"）。Controller Action 會去呼叫 Model 裡面對應的 methods。Model 會去讀寫資料庫，然後把包含資料的 object 回傳到 Controller。Controller 會拿到這個 object 並且丟到 View 裡面。Action 通常會有對應的 View 檔案，Rails 會自動尋找並使用之。）
+
+Models、Views、Controllers 有各自的工作。像這樣把責任拆開來，會比較容易開發，尤其是它長得愈來愈大的時候。（每個檔案都有清晰的責任，會比較容易處理問題、增加新功能。）
   MARKDOWN
 }
