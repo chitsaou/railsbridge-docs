@@ -1,18 +1,18 @@
-message "An SSH key uniquely identifies you (and your computer) when your computer is communicating with other computers. Think of an SSH key as a fancy password."
+message "SSH key 是一個唯一的識別證，當你跟別的電腦通信的時候，用來認證你（和你的電腦）。你可以把 SSH key 當做一個幻想的密碼。"
 
-message "You'll need one of these to create your Heroku and Github accounts."
+message "你需要用以下其中一個方式來開你的 Heroku 和 GitHub 帳號。"
 
-option "Did you use RailsInstaller on Windows?" do
-  message "Congratulations, you already have an ssh key!"
+option "你用的是 Windows 的 RailsInstaller 嗎？" do
+  message "賀！你已經有 SSH Key 了！"
   link_without_toc 'create_a_heroku_account'
 end
 
-option "Do you have a preexisting SSH key for some other reason?" do
-  message "Maybe you went to a previous RailsBridge workshop, or generated an SSH key to push some code to GitHub? You can check with the following command:"
+option "你已經有一個用在其他用途的 SSH key 了嗎？" do
+  message "也許你去過歷屆的 RailsBridge 工作坊，也許為了上傳程式碼到 GitHub 所以生過一個 key？你可以用以下指令來檢查："
   console "ls ~/.ssh/id_rsa"
-  message "If you see the message **No such file or directory**, you don't have an SSH key yet."
+  message "如果看到的是 **No such file or directory** ，那表示你還沒有 SSH key。"
   option_half "'No such file or directory'" do
-    message "Go on to <a href='#generate-key'>Generate an SSH key"
+    message "來這裡：<a href='#generate-key'>生一個 SSH key"
   end
   option_half "'/Users/[something]/.ssh/id_rsa'" do
     link_without_toc 'create_a_heroku_account'
@@ -20,28 +20,28 @@ option "Do you have a preexisting SSH key for some other reason?" do
 end
 
 a name: "generate-key"
-option "Generate an SSH key" do
-  important "Use the same email address for heroku, git, github, and ssh."
+option "生一個 SSH key" do
+  important "請在 Heroku、Git、GitHub、SSH 使用相同的 Email。"
 
-  important "**REPLACE** `student@example.com` with your **actual email address** below."
+  important "請務必把 `student@example.com` **「換成你自己的 Email」**"
 
   console "ssh-keygen -C student@example.com -t rsa"
 
-  message "Press enter to accept the default key save location."
+  message "按 Enter 來使用預設儲存的 Key 資料夾。"
 
-  message "Next, you'll be asked for a keyphrase."
+  message "接下來，它會要你輸入通關密碼（Keyphrase）"
 
-  h1 "Choose whether to use a keyphrase"
+  h1 "決定要不要使用通關密碼"
   blockquote do
-    option_half "No keyphrase" do
-      message "Hit enter to accept blank passphrase, then hit enter again."
+    option_half "不使用" do
+      message "按 Enter 來使用空的通關密碼，再按一次 Enter 來確認。"
     end
-    option_half "Keyphrase" do
-      message "If your computer is shared with other people, as in a work laptop, you should choose and enter a real passphrase. Twice."
+    option_half "使用" do
+      message "如果你跟別人共用電腦，像是工作用筆電，那你應該設通關密碼，輸入兩次。"
     end
   end
 
-  message "After key generation is complete, you'll have output that looks like this."
+  message "在 key 生完之後，你會看到像這樣的輸出。"
 
   result <<-OUTPUT
 Generating public/private rsa key pair.
@@ -56,16 +56,16 @@ The key fingerprint is:
   OUTPUT
 
   verify do
-    message "Your brand-new public key is now stored at `~/.ssh/id_rsa.pub`"
-    tip "Public vs. Private Keys" do
-      message "If you look inside `~/.ssh/`, you will notice two files with the same name: `id_rsa` and `id_rsa.pub`."
-      message "`id_rsa.pub` is your **public key** and can be shared freely."
-      message "`id_rsa` is your **private key** and must be kept secret."
-      message "If someone else gets your private key and your passphrase, then they can pretend to be you and log on to your Heroku or Github accounts and cause mischief!"
+    message "你新的 public key 現在會放在 `~/.ssh/id_rsa.pub`"
+    tip "Public vs. Private Keys （公鑰與私鑰）" do
+      message "如果你看 `~/.ssh/` 裡面，你會發現有兩個同名的檔案：`id_rsa` 和 `id_rsa.pub`。"
+      message "`id_rsa.pub` 是你的 **public key（公鑰）**，你可以隨便拷給別人。"
+      message "`id_rsa` 是你的 **private key（私鑰）**，請當做機密妥善保管，不可流出。"
+      message "如果有人拿到你的私鑰和通關密碼，他們就可以偽裝成你，登入 Heroku 或 GitHub 做壞事！"
     end
   end
 
-  message "Add your generated public key to the authentication agent using the following command:"
+  message "把產生完的 public key 加入認證管理程式（authentication agent）："
 
   console "ssh-add ~/.ssh/id_rsa"
 
