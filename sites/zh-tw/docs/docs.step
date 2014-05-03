@@ -1,74 +1,74 @@
 message <<MARKDOWN
-This site is maintained by RailsBridge volunteers. If you find something that could be improved, please make a [pull request](https://github.com/railsbridge/docs) or [drop us a note](https://github.com/railsbridge/docs/issues/new) via GitHub Issues (no technical knowledge required).
+本站由 RailsBridge 志工維護。如果有需要改善的地方，請上 GitHub 發 [pull request](https://github.com/railsbridge/docs) 或[告訴我們](https://github.com/railsbridge/docs/issues/new)（不需要技術知識）。
+
+中文版註：翻譯改善建議等，請至 [chitsaou/railsbridge-docs](https://github.com/chitsaou/railsbridge-docs) 。
 MARKDOWN
 
-h1 'Setup'
+h1 '安裝'
 
 site_desc 'installfest', <<-MARKDOWN
-Instructions for installing Ruby and Rails on your computer. You are required to do this before going to a Rails workshop!
+指導你在電腦上安裝 Ruby on Rails。必須先做完這個才能去 Rails 的工作坊！
 MARKDOWN
 
 h1 'Rails'
 
 site_desc 'intro-to-rails', <<-MARKDOWN
-The "classic" RailsBridge curriculum (Suggestotron). Takes you step-by-step through making a Rails app, one command at a time, using helpers like `rails generate scaffold`.
+傳統的 RailsBridge 課程（稱為 Suggestotron）。帶你一步一步蓋一個 Rails 應用程式、執行一條條指令、使用像是 `rails generate scaffold` 之類的輔助工具。
 MARKDOWN
 
 site_desc 'intermediate-rails', <<-MARKDOWN
-Curriculum for students who have taken Suggestotron more than once. 'Easy mode' is now OFF - this curriculum won't tell you what to type in!
+給已經練過 Suggestotron 的同學們的課程。這次不會開「簡單模式」──課程裡面不會告訴你要打什麼字！
 MARKDOWN
 
-h1 'Frontend'
+h1 '前端（Frontend）'
 
 site_desc 'frontend', <<-MARKDOWN
-HTML + CSS for beginners. Make a website, no server required!
+給新手的 HTML + CSS。蓋一個網站，不使用後端伺服器。
 MARKDOWN
 
 site_desc 'intro-to-javascript', <<-MARKDOWN
-A Javascript specific curriculum that walks you through [building a simple game](http://snake-tutorial.zeespencer.com/).
+JavaScript 專門課程，帶你一步步[做一個簡單的遊戲](http://snake-tutorial.zeespencer.com/)。
 MARKDOWN
 
 h1 'Ruby'
 
 site_desc 'learn-to-code', <<-MARKDOWN
-A course which teaches how to code from the ground up, using Alex's [Learn To Code In Ruby](http://codelikethis.com/lessons/learn_to_code) curriculum. It's geared towards people who may never have written code before and teaches just enough Ruby to get across basic principles like variables, objects, and the command line.
+教你如何從頭開始寫程式，使用 Alex 的 [Learn To Code In Ruby](http://codelikethis.com/lessons/learn_to_code) 課程。本課程專門設計給從來沒寫過程式的同學，並且只教足夠用的 Ruby，讓你知道程式設計的基本觀念，像是變數、物件、Command Line。
 MARKDOWN
 
 site_desc 'ruby', <<-MARKDOWN
-A ruby-specific curriculum, expanded from the "Ruby for Beginners" slide deck. Still new, with room for your contributions.
+Ruby 專門課程，延續〈Ruby for Beginners〉投影片的內容。目前還很新，需要各位的幫忙。
 MARKDOWN
 
-h1 'Other'
+h1 '其他'
 
 site_desc 'workshop', <<-MARKDOWN
-The Railsbridge junkyard! Slide decks for opening/closing presentations, teacher training.
+RailsBridge 的雜物堆！開場、尾聲的投影片、教師訓練材料等。
 MARKDOWN
 
 message <<MARKDOWN
-# RailsBridge curriculum-related FAQ
+# RailsBridge 課程相關常見問題 (FAQ)
 
-### Can I use the RailsBridge curricula at my event?
+### 我可以把 RailsBridge 課程用在我的活動嗎？
 
-Anyone can use this site! It's under a Creative Commons license ([CC-BY,  specifically](http://creativecommons.org/licenses/by/3.0/)), which means you're welcome to share, remix, or use our content commercially. We just ask for attribution.
+大家都可以用這個網站！它的授權是 Creative Commons ([CC-BY](http://creativecommons.org/licenses/by/3.0/))，也就是說我們歡迎你分享、引用 (remix)、甚至把內容用在商業用途。我們只要你註明作者。
 
-Slightly different: if you're organizing an event and wonder if it could be considered a RailsBridge Workshop, we just have two requests:
+但有點不同的是：如果你想開一個活動，想叫它是 RailsBridge 工作坊，我們只有兩個請求：
 
-* The event should be free of charge.
-* The event should work toward making tech more welcoming!
+* 該活動要是免費的。
+* 該活動要讓科技更受歡迎！
 
-If you're not doing those two things, you can totally still use the site, we just ask that you not call your event a RailsBridge workshop.
-(Charity workshops have used "Rails Workshop featuring the RailsBridge curriculum" in the past, which is neat.)
+做不到上面兩點，還是可以使用本站，我們只要求你別稱它是 RailsBridge 的工作坊。（曾經有公益活動使用「使用 RailsBridge 教學課程的 Rails 工作坊」，這樣 OK。）
 
+### 我想幫忙，怎麼開始？
 
-### I want to help, but I don't know how.
+首先，[開 GitHub 帳號](https://github.com/)。然後[開票](https://github.com/railsbridge/docs/issues)寫下你的想法。我們會幫你實現之（只要它符合我們的理想 :D）。
 
-First, [make a GitHub account](https://github.com/). Then, [create an issue](https://github.com/railsbridge/docs/issues) with the idea you have. We'll help you turn it into reality (assuming it's in line with our lofty goals :D).
-
-Don't know what you could work on? Browse the [issues list](https://github.com/railsbridge/docs/issues) and the [To Do list](https://github.com/railsbridge/docs/wiki/RailsBridge-To-Do-List). Those have lots of ideas.
+不知道自己能做什麼呢？去爬一下[票單](https://github.com/railsbridge/docs/issues)和[待辦事項](https://github.com/railsbridge/docs/wiki/RailsBridge-To-Do-List)。裡面有很多想法。
 
 
-### I have a different question about RailsBridge.
+### 我有對 RailsBridge 的問題。
 
-The [RailsBridge website](http://www.railsbridge.org) probably has an answer!
+[RailsBridge 網站上](http://www.railsbridge.org) 或許有答案！
 
 MARKDOWN
