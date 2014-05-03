@@ -1,5 +1,5 @@
-step "Use git" do
-  tip "If your prompt doesn't already show that you are (still) in the test_app folder" do
+step "使用 git" do
+  tip "如果終端機沒有顯示你（還）在 test_app 資料夾：" do
     console "cd test_app"
   end
 
@@ -12,28 +12,28 @@ step "Use git" do
   console "git add -A"
   tip do
     message <<-MARKDOWN
-      With Git, there are usually many ways to do very similar things.
+      在 Git 裡，有多個指令可以做到類似的事：
 
-        * `git add foo.txt` adds a file named `foo.txt`
-        * `git add .` ("git add dot") adds all new files and changed files, but *keeps* files that you've deleted
-        * `git add -A` adds everything, including deletions
+        * `git add foo.txt` 把名叫 `foo.txt` 的檔案加進追蹤修訂。
+        * `git add .` ("git add dot") 把所有新檔案和改過的檔案加進追蹤修訂，但*「保留」*你刪掉的檔案。
+        * `git add -A` 全部加進追蹤修訂，包括刪掉的檔案。
 
-      "Adding deletions" may sound weird, but if you think of a version control system as keeping track of *changes*, it might make more sense.
+      「把刪掉的檔案加進來」聽起來很奇怪，但如果你把版本控制系統想像成是追蹤*「修改」*的工具，或許就會懂了。
     MARKDOWN
   end
 
   console "git commit -m \"initial commit\""
-  result "a lot of lines like create mode 100644 Gemfile"
+  result "一堆 create mode 100644 Gemfile"
 
   console "git log"
-  result "(Your git name and \"initial commit\" message.)"
+  result "（你的 git 名字以及 \"initial commit\" 的訊息）"
 end
 
-step "Deploy your app to Heroku" do
+step "把你的程式部署（Deploy）到 Heroku" do
 
-  step "Create a Heroku application from this local Rails application." do
+  step "從這個本地的 Rails 應用程式來新增一個 Heroku 應用程式。" do
 
-    message "The very first time you use `heroku` you must enter your Heroku email address and password. Your password may not be shown as you type it, but don't worry, it's being entered! If you have already provided your credentials before, you won't be prompted for them again."
+    message "第一次用 `heroku` 指令的時候，你必須輸入 Heroku 的 Email 和密碼。輸入密碼的時候不會顯示在螢幕上，不過別擔心，它真的有輸入了！如果你已經打過一次帳密，它就不會再問你。"
 
     console "heroku create"
     result <<-OUTPUT
@@ -46,25 +46,26 @@ step "Deploy your app to Heroku" do
       Git remote heroku added
     OUTPUT
 
-    message "Heroku apps are automatically given lyrical names that look like '[adjective]-[noun]-[number]'.  Each name is different."
+    message "Heroku 的應用程式會自動得到抒情風格的名字，看起來像 '[形容詞]-[名詞]-[數字]'。每個名字都不同。"
 
     console "git remote show"
     result "heroku"
 
-    message "If you get messages here complaining about public keys it's probably due to some confusion with SSH key usage by another app on your computer.  Call a volunteer over to help you figure it out.  Luckily this only needs to be done the first time you create a Heroku app."
+    message "如果它跟你說 public key 有問題，可能是因為你電腦裡其他程式有動到 SSH key。請舉手找助教來處理。不過幸好，這件事只需要在第一次開 Heroku App 的時候處理。"
   end
 
-  step "Prepare your rails app for deploying to Heroku" do
+  step "準備你的 Rails 應用程式來部署到 Heroku" do
     message <<-MARKDOWN
-      Launch your text editor and open the "Gemfile" file located inside of your test_app folder. (On Windows, this should be in `C:\\Sites\\railsbridge\\test_app` and on Linux/OS X, it should be under `~/railsbridge/test_app`.)
+      啟動你的文字編輯器，並且打開 "Gmefile" 檔案，它位在 test_app 資料夾裡面。
+      （在 Windows 會放在 `C:\\Sites\\railsbridge\\test_app` ，在 Linux 或 OS X 它會放在 `~/railsbridge/test_app`。）
 
-      Inside this file, change the line:
+      在這檔案裡面，把這一行：
     MARKDOWN
     source_code :ruby, <<-RUBY
       gem 'sqlite3'
     RUBY
 
-    message "To this:"
+    message "改成這樣："
 
     source_code :ruby, <<-RUBY
       group :development, :test do
@@ -77,37 +78,36 @@ step "Deploy your app to Heroku" do
       end
     RUBY
 
-    message "Save the file."
+    message "然後儲存檔案。"
 
-    tip "Why Sqlite (sqlite3) and PostgreSQL (pg)?" do
-      message "SQLite and PostgreSQL are different kinds of databases.  We're using SQLite for our development and test environments because it's simple to install.  We're using PostgreSQL in our production environment because Heroku has done the hard work of installing it for us and it's more powerful than SQLite. We have seperate test, development and production databases by default in Rails."
+    tip "為什麼要用 SQLite (sqlite3) 和 PostgreSQL (pg) ？" do
+      message "SQLite 和 PostgreSQL 是兩種不同的資料庫。我們把 SQLite 用在開發環境（Development）及測試環境（Test），因為它比較好安裝。我們把 PostgreSQL 用在生產環境（Production）因為 Heroku 幫我們剛裝好了，而且功能比 SQLite 多。現在我們已經根據開發、測試、生產環境拆分了資料庫，這是 Rails 的預設。"
     end
 
     console <<-BASH
 bundle install --without production
     BASH
 
-    message "Again, wait for the console prompt, and look for the 'Your bundle is complete!' message just above.  If this fails, get a volunteer to help you edit `config/environments/production.rb` "
+    message "一樣等它跑完，直到看到 'Your bundle is complete!'。如果失敗，請舉手問助教，讓他修改 `config/environments/production.rb`。"
   end
 
-  step "Set the root route" do
-    message "Use your editor to open the file routes.rb  (`C:\\sites\\railsbridge\\test_app\\config\\routes.rb` or `~/railsbridge/test_app/config/routes.rb`) and find the line containing:"
+  step "設定 root route" do
+    message "用編輯器打開 routes.rb （`C:\\sites\\railsbridge\\test_app\\config\\routes.rb` 或 `~/railsbridge/test_app/config/routes.rb`）然後找這一行："
 
     source_code :ruby, <<-RUBY
       # root 'welcome#index'
     RUBY
 
-    message "Remove this line and replace it with:"
+    message "刪掉這一行，換成這個："
 
     source_code :ruby, <<-RUBY
       root 'drinks#index'
     RUBY
 
-    message "Note that you must remove the leading '#', as lines that start with a # are
-    comments and will not have any effect."
+    message "請注意你必須把行前的 '#' 刪掉，因為以 # 開頭的行都是註解，不會有任何效果。"
   end
 
-  step "Add the changes to git" do
+  step "把修訂加入到 git" do
 
     console <<-BASH
       git add .
@@ -115,11 +115,11 @@ bundle install --without production
     BASH
   end
 
-  step "Deploy (push) to heroku" do
+  step "部署（push）到 Heroku" do
 
     console "git push heroku master"
 
-    message "It may ask: \"The authenticity of host 'heroku.com (75.101.145.87)' can't be established. RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad. Are you sure you want to continue connecting (yes/no)?\" Type <code>yes</code> and hit *enter*."
+    message "它可能會問 \"The authenticity of host 'heroku.com (75.101.145.87)' can't be established. RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad. Are you sure you want to continue connecting (yes/no)?\" 這時候請輸入 <code>yes</code> 然後按 *enter*  。"
 
     result <<-OUTPUT
       The authenticity of host 'heroku.com (75.101.145.87)' can't be established.
@@ -141,9 +141,9 @@ bundle install --without production
        * [new branch]      master -> master
     OUTPUT
 
-    important "Be sure to find and learn your Heroku application name in the output."
+    important "請從輸出的文字裡面找到你的 Heroku 應用程式名字，並記下來。"
 
-    message "This process will probably take about twice as long as your 'bundle install' and then will return you to your console prompt.  If it takes longer than that, talk to a TA."
+    message "這個過程大概會花費兩倍於 'bundle install' 的時間，然後會把終端機的控制權還給你。如果它耗去很多時間，請找助教來。"
 
     console "heroku run rake db:migrate"
 
@@ -155,24 +155,24 @@ bundle install --without production
       ==  CreateDrinks: migrated (0.0085s) ==========================================
     OUTPUT
 
-    message "The long number after CreateDrinks is a timestamp. Yours will be different!"
+    message "CreateDrinks 後面的一串數字叫做 timestamp （時間戳記）。你的應該會不一樣！"
   end
 
-  step "Visit your new application" do
+  step "上網看你的程式" do
 
-    message "In the browser, go to your application's URL. You'll need your Heroku application name."
+    message "在瀏覽器裡面，打開你程式的網址。這時候你會需要知道 Heroku 應用程式的名字。"
 
-    tip "To find your Heroku application name" do
+    tip "要知道你的 Heroku 應用程式的名字" do
       console "heroku info"
     end
 
-    tip "To quickly open your heroku application in a browser" do
+    tip "要在瀏覽器裡一秒打開你的 Heroku 應用程式" do
       console "heroku open"
     end
 
-    message "The URL for your app is <code>*application-name*.heroku.com</code> -- so with the example output in the previous step, it would be <code>floating-winter-18.heroku.com</code>. Verify you see the welcome page. Leave this browser window open."
+    message "你應用程式的網址會是 <code>*application-name*.herokuapp.com</code> ──以上面的例子來說，它就會是 <code>floating-winter-18.herokuapp.com</code>。請確定你有看到應用程式的歡迎頁，然後留著瀏覽器視窗不要關掉。"
 
-    message "Create and save a new drink to verify you can write to the database on Heroku."
+    message "新增並儲存一個新的 drink 來確定你可以寫入到 Heroku 的資料庫。"
 
   end
 end
