@@ -1,18 +1,18 @@
 message <<-MARKDOWN
 
-Ok, there is one more step. You won't be using the test applications in the workshop; we just created them to make sure everything was working. **You should delete them now to reduce confusion during the workshop.** Don't worry about losing information - you'll repeat all the steps tomorrow, but more slowly so you can better understand what's going on under the hood.
+來，還有最後一步。我們工作坊之後不會再用這個測試應用程式；做這些只是為了確定所有東西都沒問題。**你應該要立刻刪掉它，以防之後工作坊的過程中被它干擾。**別擔心忘記這些步驟，你明天會繼續重覆這些，但會做得比較慢，讓你知道它裡面是怎麼運作的。
 MARKDOWN
 
-step "Delete the apps from Heroku" do
-  message "Go to <https://heroku.com/myapps>, login if needed, and then click on your first (lyrical) app name. Click on settings. Scroll to the bottom of the page and click Delete App. Enter app name, confirm, and then repeat for the second app."
+step "從 Heroku 刪掉你的程式" do
+  message "打開 <https://heroku.com/myapps> ，要登入就先登入，然後按一下第一個（舒情詩風格的）應用程式名稱。按一下 settings。往下捲到底，按一下 Delete App。輸入應用程式的名稱來確認。如果有別的測試用程式的話，同樣的步驟再做一次。"
 end
 
-step "Delete the test_app from your computer" do
+step "把 test_app 從你的電腦裡刪掉" do
   option "Windows" do
-    message "From the Explorer, right click on the test_app folder (inside C:\\Sites) and choose Delete."
+    message "從檔案總管，在 test_app 資料夾按右鍵（放在 C:\\Sites 裡面）然後選「刪除」。"
   end
   option "Mac" do
-    message "Open your home directory and drag the test_app folder to the trash."
+    message "打開家目錄，然後把 test_app 資料夾丟進垃圾桶。"
   end
   option "Linux" do
     console "rm -rf ~/railsbridge/test_app"

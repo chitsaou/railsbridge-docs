@@ -1,22 +1,22 @@
-step "Have a volunteer check your tool versions" do
+step "讓助教檢查你的工具的版本" do
 
-  message "Find a volunteer and have them watch the next steps."
+  message "請找一個助教來讓他看以下的幾個步驟。"
 
-  verify "tool installation" do
+  verify "工具的安裝" do
 
-    tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
+    tip "大部份的情況下，版號不會完全一致。通常，如果「前兩個」版號一致，或是整個版號都比下述的還要大，那就沒問題。"
 
-    h3 "If you're on OSX or Linux:"
+    h3 "如果是在 OSX 或 Linux，檢查："
 
     console "rvm -v"
     fuzzy_result "rvm 1{FUZZY}.x.x by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.io/]{/FUZZY}"
 
-    h3 "On all operating systems:"
+    h3 "在所有 OS 檢查："
 
     console "ruby -v"
     fuzzy_result "ruby {FUZZY}1.9.3p125 (2012-02-16 revision 34643) [x86_64-darwin11.3.0]{/FUZZY}"
 
-    tip "Depending on your environment, your Ruby version might be **1.9.3**, **2.0.0** or **2.1.0**. As long as it's 1.9.3 or above, you're good to go."
+    tip "根據環境不同，你的 Ruby 版本可能是 **1.9.3**、**2.0.0**、**2.1.0** 其中一個。只要大於 1.9.3 就行。"
 
     console "bundle -v"
     fuzzy_result "Bundler version 1{FUZZY}.x.x{/FUZZY}"
@@ -24,16 +24,16 @@ step "Have a volunteer check your tool versions" do
     console "rails -v"
     fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
 
-    tip 'The RailsBridge curriculum is written for Rails 4, so if you still have Rails 3.x, you need to install Rails 4 with `gem install rails`.'
+    tip 'RailsBridge 課程是寫給 Rails 4 的，如果你還用 Rails 3.x 的話，你要升級到 Rails 4，用 `gem install rails`。'
   end
 end
 
-step "Show your Heroku app to a volunteer" do
-  message "Visit the heroku site you made on the previous page and create a new drink."
+step "把你的 Heroku 應用程式展示給助教看" do
+  message "打開你剛建立的 Heroku 網站並且新增一個 drink。"
 end
 
-step "Congratulations!" do
-  message "You get a sticker! (Or a high-five if there aren't any stickers)."
+step "賀！" do
+  message "你得到了貼紙！（如果沒貼紙的話會得到 Give me Five）"
 end
 
 next_step "clean_up"

@@ -1,12 +1,12 @@
-message "`cd` stands for change directory."
+message "`cd` 的意思是切換目錄（Change Directory）"
 
 div do
   option_half "Windows" do
     console "cd c:\\Sites"
-    message "`cd c:\\Sites` sets our Sites directory to our current directory."
+    message "`cd c:\\Sites` 會把 Sites 設成當前目錄。"
   end
-  option_half "Mac or Linux" do
+  option_half "Mac 或 Linux" do
     console "cd ~"
-    message "`cd ~` sets our home directory to our current directory."
+    message "`cd ~` 會把家目錄設成當前目錄。"
   end
 end

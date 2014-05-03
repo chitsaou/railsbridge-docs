@@ -1,36 +1,36 @@
-message "We'll be using Heroku to put our apps online because it's simple and free for the tier we'll be needing."
+message "我們會用 Heroku 來把我們的程式放到網路上，因為它既簡單又免費，很符合我們現階段的要求。"
 
-step "Visit the Heroku web site" do
+step "請上 Heroku 官網" do
   url "http://heroku.com"
 end
 
-step "Create an account" do
-  message "Click the big **Sign Up** button (it's about halfway down the page)"
-  message "Enter your email address."
-  important "Use the same email address for heroku, git, github, and ssh."
+step "開新帳號" do
+  message "按下大顆的 **Sign Up** 按鈕。（大概在整個網頁往下捲一半）"
+  message "輸入你的 Email"
+  important "請在 Heroku、Git、GitHub、SSH 使用相同的 Email。"
 end
 
-step "Activate your account" do
+step "啟動帳號" do
 
-  message "Heroku will send you an activation email. Open it and click on the activation link. It will take you to the Heroku site. Enter and confirm your password. Hit Save."
+  message "Heroku 會寄認證信給你。打開它，然後點擊啟動連結。你會跑到 Heroku 的網站。輸入密碼並確認密碼，然後按 Save。"
 
 end
 
-step "Install the Heroku toolbelt" do
+step "安裝 Heroku toolbelt" do
 
-  message "Visit https://toolbelt.heroku.com/, click the download link, and install."
+  message "請上 https://toolbelt.heroku.com/ ，按一下下載連結，然後安裝。"
 
   verify do
     console "heroku version"
     result "2.26.7 or higher"
   end
-  message "Windows users, if `heroku version` doesn't work, open a new terminal window after the heroku installer has finished."
+  message "Windows 使用者：如果 `heroku version` 不會動，請在 Heroku 安裝程式完成之後，開一個新的終端機視窗。"
 end
 
-step "Add your SSH key to your Heroku account" do
+step "把你的 SSH key 加到 Heroku 帳號" do
   console "heroku keys:add"
 
-  message "hit enter to accept the default key file to use"
+  message "按 enter 來使用預設的 key。"
 end
 
 next_step "create_a_rails_app"
