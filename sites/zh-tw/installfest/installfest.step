@@ -1,57 +1,61 @@
-message "This is a set of step-by-step instructions for installing Ruby, Rails, and other important tools on Mac, Windows, or Linux computers. Originally developed for the [Railsbridge Workshops](http://railsbridge.org), it is a community-supported open-source documentation project. If you want to contribute, click the [git] link at the top-right corner of any page and submit your change on GitHub."
+message <<MARKDOWN
+這裡有把 Ruby、Rails 和其他重要工具安裝在 Mac、Widnows、Linux 電腦上的逐步指引。
+最初是寫給 [Railsbridge 工作坊](http://railsbridge.org) 用的，現在是由社群支持的開放原始碼專案。
+如果你想貢獻，請按一下任一頁右上角的 [git] 連結來提供你的修改。
+MARKDOWN
 
-step "Prepare for the Installfest" do
+step "準備 Installfest" do
   message <<-MARKDOWN
 
 
-## You must bring:
+## 請攜帶：
 
-* **Your laptop.** You need to have a working wifi connection and a browser.
-  * If you have a choice between a Mac and a Windows laptop, please bring the Mac.
-  * Linux is an acceptable alternative, but the Installfest is only tested on Ubuntu.
-* **Power cord for your laptop**
-* If you already have accounts on Heroku or GitHub, make sure you know your username and password.
+* **你的筆電。** 你需要可以連上的 Wi-Fi 以及網頁瀏覽器。
+  * 如果你可以選 Mac 或 Windows 筆電，請帶 Mac。
+  * Linux 也可以，但 Installfest 只有測過 Ubuntu。
+* **你的筆電的充電器。**
+* 如果你已經註冊過 Heroku 或 GitHub，請確定你記得帳密。
 
-## Possibly also helpful to bring:
+## 帶來或許會有用的東西：
 
-* Extension cord
-* Power strip
-* Camera
-* Snacks
+* 電源延長線
+* 排插
+* 相機
+* 零食
 
   MARKDOWN
 end
 
-step "Don't Panic!" do
+step "免緊張！" do
   message <<-MARKDOWN
 
 
-Even if you get stuck, please go through the rest of the instructions and download all the things you'll need. Bandwidth will be at a premium during the workshop, so it will help immensely to have everything on your laptop already.
+就算你卡住了，也請繼續往下做剩下的步驟，下載所有你需要的東西。工作坊現場的網路通常會滿載，所以如果事先下載回來會非常好。
 
-There are a lot of steps, and the instructions may seem like they're in a foreign language, but: **don't panic!** By the end of the workshop, you'll know what everything is and how to use it.
+這裡面會有很多步驟，有的可能會長得火星文，但是：**免緊張**！在工作坊的最後，你會知道哪個是幹嘛的以及怎麼用。
 
   MARKDOWN
 end
 
-step "Read This Overview" do
+step "請讀以下摘要" do
   message <<-MARKDOWN
 
-You will be installing the following tools:
+你會安裝這些工具：
 
 * Ruby
 * Rails
 * Git
 * Heroku
-* Sublime Text 2 (or [some editor](editors))
-* Various useful "ruby gems", including...
+* Sublime Text 2（或[別的編輯器](editors)）
+* 一堆有用的 "ruby gems" ，包括…
   * bundler
   * sqlite
 
-You will also create an account on Heroku, an application hosting platform.
+你也會開一個 Heroku 帳號，這是可以把應用程式放到上面跑的平台。
 
-If you already have an account on Heroku, make sure you know your username and password.
+如果你已經有 Heroku 帳號了，請確定你記得帳密。
 
-If you've already installed the above tools and are confident they are setup correctly, skip ahead to the <a href="get_a_sticker">Get a Sticker</a> step.
+如果已經安裝過這些工具，而且有自信它們都會動，那麼請直接跳到 <a href="get_a_sticker">拿貼紙</a>。
 
   MARKDOWN
 end
