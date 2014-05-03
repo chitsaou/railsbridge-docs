@@ -2,7 +2,7 @@ console <<-BASH
   rvm install 2.0.0
 BASH
 
-message "This downloads and compiles Ruby, which takes a while."
+message "這會下載並編譯 Ruby ，會花一點時間。"
 console <<-BASH
   rvm use 2.0.0
   rvm --default use 2.0.0
@@ -14,8 +14,8 @@ verify do
 end
 
 div do
-  h1 "Troubleshooting"
-  important "If `rvm install 2.0.0` says `autoreconf was not found in the PATH`" do
+  h1 "疑難排解"
+  important "如果 `rvm install 2.0.0` 跟你說 `autoreconf was not found in the PATH`" do
     div do
       option_half "Mac OS" do
         console "brew install automake"
@@ -26,7 +26,7 @@ div do
       end
     end
 
-    message "Once that completes, retry `rvm install 2.0.0`"
+    message "完成之後，重跑 `rvm install 2.0.0`"
   end
 end
 

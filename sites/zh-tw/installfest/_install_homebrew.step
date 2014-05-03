@@ -1,9 +1,10 @@
 
 console %q{ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"}
 
-message "You may have to press 'ENTER' when prompted and type in your password."
+message "提示輸入密碼的時候 ，你可能要輸入密碼並按 'ENTER'。"
+# Note by translator: hard to translate
 
-important "If that doesn't work, visit <https://github.com/Homebrew/homebrew/wiki/installation> and follow the instructions there."
+important "如果不會動，請上 <https://github.com/Homebrew/homebrew/wiki/installation> 並看它的指示。"
 
 verify do
   console "brew -v"

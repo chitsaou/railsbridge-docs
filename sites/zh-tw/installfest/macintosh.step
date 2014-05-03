@@ -1,51 +1,51 @@
-step "Learn your Mac OS X Version" do
+step "知道你的 Mac OS X 版本" do
   message <<-MARKDOWN
 
-* Click on the Apple icon in the top left of your screen.
-* Select "About This Mac"
-* In the window that comes up, under the title "Mac OS X" there will be a version number.
-  * If it starts with 10.9, you have **Mavericks**.
-  * If it starts with 10.8, you have **Mountain Lion**.
-  * If it starts with 10.7, you have **Lion**.
-  * If it starts with 10.6, you have **Snow Leopard**.
-  * If it starts with 10.5, you have **Leopard**.
-  * If it starts with 10.4, you have **Tiger**.
-  * If it starts with 10.3, you have **Panther**.
+* 按螢幕右上角的蘋果 Apple 圖示。
+* 選「關於這台 Mac」
+* 在跳出的「Mac OS X」視窗裡面會有版本號碼。
+  * 如果是 10.9 開頭，你的是 **Mavericks**。
+  * 如果是 10.8 開頭，你的是 **Mountain Lion**。
+  * 如果是 10.7 開頭，你的是 **Lion**。
+  * 如果是 10.6 開頭，你的是 **Snow Leopard**。
+  * 如果是 10.5 開頭，你的是 **Leopard**。
+  * 如果是 10.4 開頭，你的是 **Tiger**。
+  * 如果是 10.3 開頭，你的是 **Panther**。
 
-* Write down the Mac OS X version you have.
-* In addition, to the right of the "Processor", there will be the a processor type.
-  * If it ends with **Intel Core i7**, **Intel Core i5**, or **Intel Core i3**, you are good to go.
-  * If it ends with **Intel Core 2 Duo**, you are good to go.
-  * If it ends with **Intel Core Duo** or something else, you are **NOT** good to go.  Please flag down a volunteer.
+* 記下你的 Mac OS X 版本。
+* 此外，在「處理器」的右邊，會有你的處理器型號。
+  * 如果是 **Intel Core i7** 、**Intel Core i5** 、 **Intel Core i3** 結尾的，就沒問題，你可以往下做。
+  * 如果是 **Intel Core 2 Duo** 結尾的，就沒問題，你可以往下做。
+  * 如果是 **Intel Core Duo** 結尾的，或是別的東西，你**沒辦法**繼續往下。請舉手找助教。
 
-* Once complete, you may close the "About This Mac" window.
+* 完成之後，可以關掉「關於這台 Mac」的視窗。
 
-Below is an example.
+下圖是個範例。
 
 ![OS X Snow Leopard](img/AboutThisMac.png)
 
   MARKDOWN
 end
 
-step "Choose your instructions" do
+step "選擇你的指南" do
   
   option "Mavericks" do
     link "osx_rvm"
   end
   option "Mountain Lion/Lion/Snow Leopard" do
     option_half "RailsInstaller" do
-      message "RailsInstaller is an easy way to get up and running with Ruby and Rails on OSX. Try it first."
+      message "RailsInstaller 可以很簡單就讓你把 Ruby 和 Rails 跑在 OSX。請先試這個。"
       link "osx_railsinstaller"
     end
-    option_half "Manually" do
-      message "If something went wrong with RailsInstaller, or you want to do things the 'long way', use these instructions."
+    option_half "手動" do
+      message "如果 RailsInstaller 有問題，或你想要慢慢做，用這份指南。"
       link "osx_rvm"
     end
   end
 
   option "Leopard/Tiger/Panther" do
-    important "If at all possible, you should try upgrading to at least **Snow Leopard**. Apple doesn't sell it the Apple store anymore, so you'll have to [buy it from them online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) or find a copy from a friend."
-    message "Otherwise, you can try following the Panther instructions, but be prepared for some things to be difficult."
+    important "可以的話，請升級到 **Snow Leopard**。Apple 不在實體店販售了，你必須[從網路商店買](http://store.apple.com/tw/product/MC573Z/A/mac-os-x-106-snow-leopard)或跟朋友要。"
+    message "或是你可以試試看 Panther 用的指南，但請先做好會遇到困難的心理準備。"
     link "osx_panther"
   end
 end
