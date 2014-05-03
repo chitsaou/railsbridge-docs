@@ -1,54 +1,49 @@
 message <<-MARKDOWN
-### Goal
+### 目標
 
-To teach you Ruby on Rails we are going to use a "Real World"
-example. You've decided to create a voting system for you and your
-friends to play with. You've decided at a minimum, you'd like to
-allow users to:
+為了教會你 Ruby on Rails，我們會使用「真實世界」的範例。你現在打算要做一個投票系統，讓你和你的朋友來玩。
+你打算要做一個基本可用的程式，讓使用者可以：
 
-* view the topics sorted by number of votes
-* vote on topics
-* create, edit, and destroy topics
+* 檢視主題，用投票數來排序
+* 對主題投票
+* 開新主題、編輯主題、刪除主題
 
-You've sketched up an initial screenshot of what you want it to look like:
+貼張圖讓你看看它會長怎樣：
 
 ![screenshot](img/finished_app.png)
 
-### Meta-Goal
+### 練功目標
 
-When you have completed today's goal of getting the basic
-application online you should understand:
+當你把今天製作應用程式並上線的目標完成之後，你會學會：
 
-* Basic Ruby syntax
-* How to try your Ruby code (irb)
-* How to go from requirements to a new working Rails application
-* How to get your application online
-* The basic tools a RoR developer uses (source control, editor, console, local server)
+* 基本 Ruby 語法
+* 要怎麼試一些 Ruby 程式碼 (irb)
+* 要怎麼把需求變成會動的 Rails 應用程式
+* 要怎麼把你的應用程式放到網路上
+* Rails 工程師會使用的基本工具（版本控制、編輯器、console、本機 server）
 
-### Schedule
+### 時程
 
-* 1-ish hour of ruby
-* 4-ish hours of rails, broken up in 1-ish hour steps
+* 約 1 小時 Ruby
+* 約 4 小時 Rails，每一步驟約 1 小時。
 
 This is just a rough guideline, not a mandate. Some steps you'll go
 over and some you'll go under. It'll all work out by the end of the
 day... unless I really screwed something up. :D
 
-### Requirements
+### 需求
 
-We're going to be working with:
+我們會用這些來做：
 
-* ruby 1.9.3, 2.0.0 or 2.1.0 installed via RVM (Mac or Linux) or RailsInstaller (Mac or Windows)
+* ruby 1.9.3、2.0.0 或 2.1.0 用 RVM 安裝（Mac 或 Linux）或用 RailsInstaller 安裝（Mac 或 Windows）
 * rails 4.0.x
 * bundler
 * sqlite
-* the text editor of your choice
+* 你自己選的文字編輯器
 
-Everything should be set up the night before during our
-install-fest. Please ensure you have everything working _before_ you
-show up for RailsBridge on Saturday.
+這些應該都要在前一晚的 Installfest 就安裝好。請在星期六的 RailsBridge *「之前」*確定它們都妥妥的。
 
-You can verify that you have everything working by trying this out in your terminal:
+要確認一切沒問題的話，可以在終端機輸入：
 
 <div class="console"><pre>
 $ irb
@@ -61,53 +56,50 @@ $
 </pre>
 </div>
 
-If you can do that, you are probably good to go.
+如果這些都可以跑的話，你應該沒問題了。
 
-### Working Effectively and Efficiently
+### 效能！效率！
 
-I highly recommend you do the following:
+我非常推薦你這樣做：
 
-* Bring up your terminal and open 2 tabs:
-  * One is for regular terminal stuffs
-  * One will be for irb (aka rails console). We'll explain later
-* Open your browser fresh or hide any windows you already have open.
-  * Bring up one window with two tabs
-    * One for this content
-    * One for interacting with your app.
-* Open your text editor and _do not ever close it_. We're not quitters.
-* Hide all extra applications. Turn off twitter, IM, and all other distractions.
+* 打開終端機並開兩個分頁：
+  * 一個用來做平常的終端機指令
+  * 一個用來使用 irb （即 rails console）。我們之後會提到
+* 重新打開你的瀏覽器，或是把其他視窗關掉起來
+  * 打開新的視窗並開兩個分頁
+    * 一個用來看本教學
+    * 一個用來測試你的程式
+* 打開文字編輯器，然後*不要關掉它*。我們不會中離。
+* 把其他應用程式都隱藏起來。關掉 Twitter 、即時通訊程式、別的干擾物。
 
-By minimizing the number of things you interact with, you reduce the
-amount of time spent switching between them and the context lost as
-you work through the lessons. Having 50 tabs open in your web
-browser gets confusing and wastes time.
+把跟你互動的東西最少化，可以減少你分心在這些東西的次數與耗費的時間。在瀏覽器裡打開 50 個分頁會干擾到你並且浪費時間。
 
-### Format
+### 格式
 
-Each lesson will look like this:
+每一課的格式都會長這樣：
 
 <div style="background: white; border: 1px solid black; padding-left: 4em;">
-  <h1 class="doc_title" style="margin-top: 0em;">Step Title</h1>
+  <h1 class="doc_title" style="margin-top: 0em;">標題</h1>
   <div class="goals">
-    <h1>Goal:</h1>
-    <p>Description of the current step.
-    <p>Red because big goals are scary.
+    <h1>目標：</h1>
+    <p>敘述我們要做什麼
+    <p>紅的明顯，因為大目標很恐怖
   </div>
   <div class="steps">
-    <h1>Steps:</h1>
-    <pre class="term">steps to take.</pre>
+    <h1>步驟：</h1>
+    <pre class="term">要做的步驟</pre>
     <div class="console">
       <pre>
 def code_to_write
   1 + 1
 end</pre>
     </div>
-    <p>Yellow because we've gotten it done, but we have no clue what's going on.
+    <p>用黃色是因為我們做完了，但知其然卻不知其所以然。
   </div>
   <div class="explanation">
-    <h1>Explanation</h1>
-    <p>Details of what the steps actually did... spell out the cause and effect.
-    <p>Green because we can tie everything together now.
+    <h1>解釋</h1>
+    <p>關於這些步驟實際上做了什麼的細節，詳述原因與效果。
+    <p>用綠色是因為現在我們把一切都連在一起了。
   </div>
 </div>
 MARKDOWN
