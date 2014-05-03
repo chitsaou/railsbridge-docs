@@ -33,7 +33,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
-    @default_sites = {en: "docs", es: "hola", :"zh-tw" => "nihao" }
+    @default_sites = {en: "docs", es: "hola", :"zh-tw" => "docs" }
     @default_locale = "en"
   end
 
