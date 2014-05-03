@@ -1,5 +1,5 @@
 goals do
-  goal "Let's fire up the application locally"
+  goal "我們來把程式在本機啟動吧！"
 end
 
 
@@ -8,13 +8,13 @@ steps do
     console "rails server"
   end
   step do
-    text "Point your web browser to "
+    text "在你的瀏覽器打開"
     url "http://localhost:3000" 
-    p "See your web app actually running!"
+    p "然後你就會看到的程式跑起來了！"
   end
 
   step do
-    message "When at the terminal with your running rails server, type **Control-C** to stop rails server. You can do this now."
+    message "在終端機裡面，server 跑起來的時候，隨時按下 **Ctrl+C** 就可以把 server 關掉。你可以馬上試試看。"
     result <<-STOPPING_RAILS_SERVER
 ^C[2012-03-31 08:33:11] INFO  going to shutdown ...
 [2012-03-31 08:33:11] INFO  WEBrick::HTTPServer#start done.
@@ -24,9 +24,9 @@ Exiting
 end
 
 explanation do
-  message "`rails server` ran your application locally just like Heroku will be running it on their servers."
-  message "This provides a very simple means to see your changes before you commit and push them to Heroku."
-  message "Control-C is a way of closing or cancelling terminal programs. Since rails server runs forever, you need to interrupt it with Control-C."
+  message "`rails server` 會把你的程式在本機跑起來，就像 Heroku 會把程式在他們的伺服器上跑起來。"
+  message "它提供了一個非常簡單的方式讓你可以在把程式上傳到 Heroku 之前就看到結果。"
+  message "Ctrl+C 是一個把終端機處理程序關掉或取消掉的方法。因為 Rails server 會永久執行不停歇，你得要自己用 Ctrl+C 來中斷它。"
 end
 
 next_step "creating_a_migration"

@@ -1,9 +1,9 @@
 
 goals do
-  goal "Create a local git repository"
-  goal "Add all our files to the git repository"
+  goal "建一個本地的 git repository（倉庫）"
+  goal "把所有檔案加入 git repository"
 
-  message "In order to publish our application, we need to add our application and any changes we make over time to a \"revision control system\". In our case we're going to use *git* because it is (relatively) easy and it is what our app server, *Heroku*, uses."
+  message "為了把我們的應用程式發佈到網路上，我們要把我們的程式和過程中的修改都加到「版本控制系統」。我們會用 *git* ，因為它比較簡單，而且 Heroku 也用它。"
 end
 
 steps do
@@ -11,46 +11,46 @@ steps do
   step do
     console "git init"
 
-    message "It doesn't look like anything really happened, but 'git init' initialized its repository (repo) in a hidden directory called `.git`. You can see this by typing `ls -a` (list all files)."
+    message "跑完之後它看起來沒有做什麼事，然而事實上 'git init' 已經把 repository（repo）初始化到一個叫做 `.git` 的資料夾。
+    你可以打 `ls -a` （列出所有檔案）來看到它。"
   end
 
   step do
     console "git status"
 
-    message "`git status` tells you everything git sees as modified, new, or missing."
-  message "The first time you run this, you should see a ton of stuff."
-  message "The second time you run this, you shouldn't see much of anything."
+    message "`git status` 會告訴你 git 所見所有改過、新增、刪掉的東西。"
+    message "第一次跑這個指令的時候，會看到很多東西。"
+    message "第二次跑這個指令的時候，你不會看到很多東西。"
   end
 
   step do
     console "git add ."
-    message "`git add .` tells git that you want to add the current directory (aka `.`) and everything under it to the repo."
+    message "`git add .` 告訴 git 你想要把目前資料夾（即 `.`）還有它底下的所有東西加進 repo。"
     tip "git add" do
       message <<-MARKDOWN
-        With Git, there are usually many ways to do very similar things.
+      在 Git 裡，有多個指令可以做到類似的事：
 
-        * `git add foo.txt` adds a file named `foo.txt`
-        * `git add .` adds all new files and changed files, but *keeps* files that you've deleted
-        * `git add -A` adds everything, including deletions
+        * `git add foo.txt` 把名叫 `foo.txt` 的檔案加進追蹤修訂。
+        * `git add .` ("git add dot") 把所有新檔案和改過的檔案加進追蹤修訂，但*「保留」*你刪掉的檔案。
+        * `git add -A` 全部加進追蹤修訂，包括刪掉的檔案。
 
-        "Adding deletions" may sound weird, but if you think of a version control system as keeping
-        track of *changes*, it might make more sense. Most people use `git add .` but `git add -A`
-        can be safer. No matter what, `git status` is your friend.
+      「把刪掉的檔案加進來」聽起來很奇怪，但如果你把版本控制系統想像成是追蹤*「修改」*的工具，或許就會懂了。
+      多數人用 `git add .` 但 `git add -A` 會比較安全。無論無何，`git status` 都能幫上你的忙。
       MARKDOWN
     end
   end
 
   step do
     console "git commit -m \"Added all the things\""
-    message "`git commit` tells git to actually _do_ all things you've said you wanted to do."
-    message "This is done in two steps so you can group multiple changes together."
-    message "`-m \"Added all the things\"`  is just a shortcut to say what your commit message is. You can skip that part and git will bring up an editor to fill out a more detailed message."
+    message "`git commit` 告訴 git *真的要*執行你叫它做的事。"
+    message "分成 add 和 commit 兩個步驟的好處是，如此你就可以把多個修改合併在一起。"
+    message "`-m \"Added all the things\"` 這個捷徑讓你可以直接寫下 commit message。你可以省略之，這樣子 git 會打開一個編輯器請你填寫詳細的 commit message。"
   end
 end
 
 explanation do
   message <<-MARKDOWN
-By checking your application into git now, you're creating a record of your starting point. Whenever you make a change during today's workshop, we'll add it to git before moving on. This way, if anything ever breaks, or you make a change you don't like, you can use git as an all-powerful "undo" technique. But that only works when you remember to commit early and often!
+現在你已經把你的程式放進 git 了，等於你在一開始做了一個存檔點。在今天的工作坊的任何時候，你若要修改程式碼，我們都會先把它加進 git 再往下走。這樣子的話，如果之後改爛，或是改出來你不喜歡，你都可以利用 git 來「還原」到先前的狀態。不過當然你要隨時存檔啦！
   MARKDOWN
 end
 

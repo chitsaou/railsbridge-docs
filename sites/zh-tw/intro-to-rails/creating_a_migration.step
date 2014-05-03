@@ -2,10 +2,10 @@ goals {
 
   model_diagram header: 'Topics', fields: %w(id title description)
 
-  message "The suggestotron has a list of topics that people can vote on. We'll store our topics in the database. In this step you'll do the following:"
+  message "我們的 suggestotron 會有一個 Topics （主題）列表讓大家來投票。我們會把 Topics 存進 database 裡面。在這一步你會做這些事："
 
-  goal "Create a a simple *Table* in the database for topics with a title and a description"
-  goal "Automatically generate the corresponding *Scaffold* in Rails (namely, the *Model*, the *View*, and the *Controller*)."
+  goal "在資料庫裡建立一個簡單的*「表格（Table）」*來儲存 Topics，Topic 有標題和內文。"
+  goal "在 Rails 裡自動產生相對應的 *Scaffold*（包含 *Model*、*View*、*Controller*）。"
 
 }
 
@@ -14,19 +14,19 @@ steps {
   step {
     console "rails generate scaffold topic title:string description:text"
     message <<-MARKDOWN
-* `generate scaffold` tells rails to create everything necessary to get up and running with topics.
-* `topic` tells rails the name of the new model.
-* `title:string` says that topics have a title, which is a "string".
-* `description:text` says that topics have a description which is a "text". (What's the difference between "string" and "text"? Basically "text" is for strings that might be very long.)
+* `generate scaffold` 告訴 Rails 去建立一堆檔案讓 topics 可以動。
+* `topic` 是告訴 rails 新的 Model 的名字是什麼。
+* `title:string` 是說 topics 有標題（title），它是一個字串（String）。
+* `description:text` 是說 topics 有內文（description），它是一段文字（Text）。（「字串」跟「文字」的差別？基本上「文字」是用來儲存可能會很長的字串。）
 
     MARKDOWN
-    message "If you want, take some time to poke around the files listed in this step. You can learn about them in the [Rails Architecture](rails_architecture) page."
+    message "你若有興趣，可以花一點時間研究一下自動產生出來的檔案。你可以在[Rails Architecture](rails_architecture)這一頁學到更多。"
     link "rails_architecture"
   }
 
   step {
     console "rake db:migrate"
-    message "This tells rails to update the database to include a table for our new model."
+    message "告訴 Rails 更新資料庫來建立一個用來儲存新的 Model 的表格（Table）。"
   }
 }
 
@@ -34,13 +34,13 @@ explanation {
 
   h2 "Rake"
   message <<-MARKDOWN
-`rake` _(ruby make)_ is a tool that allows you to run small Ruby programs (**tasks**) that you use often in your application.
+`rake` _(ruby make)_ 這個工具讓你可以執行小型的 Ruby 程式（稱為 **tasks**），這些程式是你的程式常常會用到的。
 
-Here, `rake db:migrate` is a task provided by the Rails framework. It uses the migration file we just created (`db/migrate/201xxxxxxxxxxx_create_topics.rb`) to change the database. Database migration files can be crucial to code collaboration.
+這裡的 `rake db:migrate` 是由 Rails framework 提供的 task。它會使用我們剛建立的 migration 檔 (`db/migrate/201xxxxxxxxxxx_create_topics.rb`) 來更改資料庫。資料庫的 migration 檔對於合作寫程式是非常重要的。
 
   MARKDOWN
 
-  tip "You can run `rake -T` to see a list of all the `rake` commands your app currently responds to, along with a short description of each task."
+  tip "你可以執行 `rake -T` 來看看目前你的應用程式認得什麼樣的 `rake` 指令，還會附上簡單的說明。"
 }
 
 
