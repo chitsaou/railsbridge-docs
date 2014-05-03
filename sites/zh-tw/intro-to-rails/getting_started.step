@@ -1,13 +1,13 @@
 img src: "img/Start_page.png", alt: "Start Page"
 
 goals do
-  goal "Create Your New Application"
-message "Let's get started! By the end of this step, we'll have a brand-spankin'-new (empty) rails app."
+  goal "建立你的 New Application"
+  message "來，開始吧！在這一步驟的最後，我們會得到一個全新的（空白）Rails 應用程式。"
 end
 
 steps do
 
-  tip "If you have _any_ problems, contact a TA immediately."
+  tip "有*「任何」*問題，請立刻舉手問助教。"
 
   step do
     insert 'switch_to_home_directory'
@@ -15,7 +15,7 @@ steps do
   
   step do
     console "mkdir railsbridge"
-    message "This command creates a new directory for us to store our project in."
+    message "這會新增一個資料夾，讓我們把專案放在裡面。"
   end
 
   step do
@@ -23,77 +23,76 @@ steps do
   end
 
   step do
-    message "Check to see if you have any existing suggestotron apps from a previous workshop."
+    message "確定一下你有沒有之前工作坊留下來的 suggestotron 應用程式在裡面"
     console "ls"
-    message "That command will list the files in your railsbridge directory. If you have any old suggestotron apps in that list, you can remove them to prevent hiccups:"
+    message "這指令會列出 railsbridge 資料夾裡面的檔案。如果列出了舊的 suggestotron 應用程式，你可以刪掉它們來避免干擾："
     console "rm -rf suggestotron"
   end
 
   step do
     console "rails new suggestotron"
-    message "'rails new' creates a new rails project with the name you give."
-    message "In this case we told it to create a new project called `suggestotron`. We'll go into detail on what it created shortly."
+    message "'rails new' 會用你給的名字來建立新的 Rails 專案"
+    message "這次我們叫它建立叫做 `suggestotron` 的新專案。我們馬上就會詳述它到底建立了什麼。"
   end
 
   step do
     console "cd suggestotron"
-    message "'cd' stands for change directory."
-    message "'cd suggestotron' makes suggestotron our current directory."
+    message "'cd' 指的是切換目錄 (change directory)。"
+    message "'cd suggestotron' 把 suggestotron 資料夾設成當前資料夾。"
   end
 
   step do
     console "ls"
-    message "'ls' stands for 'list (stuff)'."
-    message "It shows you the contents of the current folder."
+    message "'ls' 指的是列出東西 (list stuff)。"
+    message "它會把目前資料夾的內容列出來給你看。"
   end
 
   step do
     message <<-MARKDOWN
-Open the suggestotron folder as a project in your text editor.
+在你的文字編輯器裡面用專案的方式打開 suggestotron 資料夾。
 
-In **Sublime Text 2**, you can use the `Project > Add Folder to Project...` menu option:
+在 **Sublime Text 2** 裡面，你可以選擇 `Project > Add Folder to Project...`。
 
 <img src='img/sublime_add_folder_to_project.png' />
 
-Select your `suggestotron` folder from the file picker that opens. If everything works out Sublime should look something like this:
+然後在檔案對話方塊裡面選擇 `suggestotron` 資料夾。如果一切沒問題的話，Sublime 會變得像這樣：
 
 <img src='img/sublime_project_as_folder.png' />
     MARKDOWN
   end
 
   message <<-MARKDOWN
-  You can see that <code>rails new</code> created a lot directories and
-  files. The ones we want to focus on today are:
+  你會發現 <code>rails new</code> 開了一大堆資料夾和檔案。今天我們要看的是這些：
   MARKDOWN
 
   table border: "1", cellspacing: "0", cellpadding: "3", align: "center" do
     tr {
-      th "File/Folder"
-      th "Purpose"
+      th "檔案／資料夾"
+      th "用途"
     }
     tr {
       td "app/"
-      td "Contains the controllers, models, and views for your application.  You will do most of your work here."
+      td "包含你應用程式的 controllers、models、views。你要改的東西大多是這些。"
     }
     tr {
       td "config/"
-      td "Configure your application's runtime rules, routes, database, and more."
+      td "設定應用程式的執行階段規則、路由設定（routes）、資料庫等等。"
     }
     tr {
       td "db/"
-      td "Shows your current database schema, as well as the database migrations."
+      td "顯示你目前資料庫的 schema（結構定義），以及資料庫的 migrations。"
     }
     tr {
       td "public/"
-      td "The only folder seen to the world as-is. If you put files in here, they will be served directly without any processing by Rails."
+      td "這是唯一一個資料夾會是放什麼就出現什麼的。如果你把檔案放裡面，server 會直接回傳，不會經過 Rails 的處理。"
     }
     tr {
       td "app/assets/"
-      td "This is where your images, JavaScript, stylesheets (CSS), and other static files should go. Modern rails apps use something called the Assets Pipeline, which combines all the JavaScript and CSS files in this directory into a single file for speediness."
+      td "你會要把圖片、JavaScript、stylesheets (CSS) 還有其他靜態檔案放在裡面。現代的 Rails 應用程式使用一種叫做 Assets Pipeline 的東西，把在這資料夾裡面的所有 JavaScript 和 CSS 檔合併成一個檔案來加速。"
     }
   end
 
-  message "There is a lot more that `rails new` created. Probably enough to fill a book, so we're going to ignore them for now."
+  message "`rails new` 還建立了其他很多東西。大概可以寫一本書來講，所以我們現在先無視它們。"
 end
 
 next_step "add_the_project_to_a_git_repo"
