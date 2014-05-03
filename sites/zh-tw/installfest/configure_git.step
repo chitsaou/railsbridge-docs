@@ -1,20 +1,20 @@
-message "(If you used RailsInstaller on Windows then you should already have `user.name` and `user.email` configured.)"
+message "（如果你在 Windows 用了 RailsInstaller，那你應該已經設好了 `user.name` 和 `user.email`。）"
 
 console <<-BASH
-git config --global user.name "Your Actual Name"
-git config --global user.email "Your Actual Email"
+git config --global user.name "本名"
+git config --global user.email "你的 Email"
 BASH
 
-important "Use the same email address for heroku, git, github, and ssh."
+important "請在 Heroku、Git、GitHub、SSH 使用相同的 Email。"
 
 verify do
   console "git config --get user.name"
-  result "your name"
+  result "本名"
   console "git config --get user.email"
-  result "your email address"
+  result "你的 Email"
 end
 
-tip "Colored output in Git" do
+tip "Git 輸出的顏色" do
   console <<-BASH
 git config --global color.diff auto
 git config --global color.status auto
@@ -22,7 +22,7 @@ git config --global color.branch auto
   BASH
 
   important do
-    message "If you are using Windows, the output of Git will not have colors."
+    message "如果你用 Windows 的話，Git 的輸出不會有顏色。"
   end
 end
 
