@@ -1,31 +1,29 @@
 goals {
 
   message <<-MARKDOWN
-  When a user creates a new topic, or edits an existing topic, they are
-  currently shown a page with just that topic. For our voting app it makes
-  more sense that they would be taken back to the topic list."
+  當使用者建立了一篇新的 topic、或是編輯既有的 topic 的時候，目前他們會看到單獨那一篇 topic
+  的頁面。對於我們的投票程式來說，如果是回到 topics 列表會更好。
 
-  In this step we'll change the flow of our app so that the user is taken back to the topics list after they add a new topic (create) or
-  edit an existing topic (update).
+  這一步裡面我們會修改程式的流程，讓 user 新增（create）topic 或編輯（update）topic 之後會回到 topics 列表。
   MARKDOWN
 }
 
 steps {
 
-  step "Change the topics controller" do
+  step "修改 topics controller" do
 
-    message "Open `app/controllers/topics_controller.rb` and look at the create method. "
+    message "打開 `app/controllers/topics_controller.rb` 找到 create method。"
 
-    message "Find the line:"
+    message "找這一行："
 
     source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully created.' }"
 
 
-    message 'and change `@topic` to `topics_path` like this:'
+    message '把 `@topic` 改成 `topics_path`，像這樣：'
 
     source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }"
 
-    message 'so that the file looks like this:'
+    message '最後會長得像這樣：'
 
     source_code :ruby, <<-RUBY
 def create
@@ -43,32 +41,32 @@ def create
 end
     RUBY
 
-message "In the same file, locate the update method. "
+  message "在同一個檔案裡面，找到 update method。"
 
-    message "Find the line:"
+    message "找這一行："
 
     source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }"
 
 
-    message 'and change `@topic` to `topics_path` like before:'
+    message '跟之前一樣，把 `@topic` 改成 `topics_path`：'
 
     source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully updated.' }"
   end
 
-  step "Add the flash message to your application view" do
-      message "Open `app/views/layouts/application.html.erb`."
+  step "加 flash message 到程式的 view 裡面" do
+      message "打開 `app/views/layouts/application.html.erb`。"
 
-      message "Find the `<body>` HTML tag and immediately after add the following code:"
+      message "找 `<body>` HTML tag，在它的正下方加入這些程式："
 
-      source_code :ruby, <<-RUBY
+      source_code :erb, <<-RUBY
 <% flash.each do |name, msg| %>
     <div><%= msg %></div>
 <% end %>
-      RUBY
+    RUBY
   end
 
-  step "Confirm your changes" do
-    message "Look at <http://localhost:3000>."
+  step "確認修改成功" do
+    message "打開 <http://localhost:3000> 然後玩玩看。"
   end
 }
 
@@ -76,10 +74,10 @@ message "In the same file, locate the update method. "
 explanation {
 
   message <<-MARKDOWN
-  * `format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }`:
-    * `format.html` means that the server should send html back to the browser
-    * `redirect_to topics_path` means show the **topics list page** when we're done creating or updating a topic
-    * `notice: 'Topic was successfully created/updated.'` puts the message into the flash so it will be displayed on the topics list
+  * `format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }`：
+    * `format.html` 指的是當瀏覽器向 server 請求 HTML 格式的時候要做的事（要做的事在 `{ ... }` 裡面）。
+    * `redirect_to topics_path` 指的是在新增或編輯完成一篇 topic 之後要回到 **topics 列表頁面**。
+    * `notice: 'Topic was successfully created/updated.'` 把訊息丟進 flash 裡面，這樣子回到 topics 列表頁面的時候就會看到。
   MARKDOWN
 }
 

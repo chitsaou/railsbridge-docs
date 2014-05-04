@@ -1,32 +1,33 @@
 goals {
-  message "Your friends recommended two changes for the site:"
-  goal "Don't show the description on the list page"
-  goal "Make the title a link and when it's clicked show the description"
+  message "強者你朋友建議你改網站："
+  goal "不要在 topics 列表頁面出現內文。"
+  goal "把標題變成超連結，按一下才顯示內文。"
 }
 
 steps {
 
 
-  step("Remove the description") {
+  step("拿掉內文") {
 
-    message "Let's start by removing the description. Open `app/views/topics/index.html.erb` and delete the line that looks like this:"
+    message "首先來拿掉內文（description）吧。打開 `app/views/topics/index.html.erb` 然後刪掉這一行："
 
     source_code :erb, "<td><%= topic.description %></td>"
 
-    message "Also delete the line that looks like this:"
-  source_code :erb, "<th>Description</th>"
+    message "還有刪掉這一行："
+    
+    source_code :erb, "<th>Description</th>"
 
-    message "If you save and try to load it in the browser you should see that the description no longer appears."
+    message "現在如果你試試看在瀏覽器裡面重新整理，你應該會發現到內文消失了。"
 
   }
 
-  step("Make the title a link") {
+  step("把標題變成超連結") {
 
-    message "Now make the title a link by editing `app/views/topics/index.html.erb` (again) and replacing this line:"
+    message "現在來把標題變成超連結，編輯 `app/views/topics/index.html.erb` 然後把這一行："
 
     source_code :erb, "<td><%= topic.title %></td>"
 
-    message "with this:"
+    message "改成這樣："
 
     source_code :erb, "<td><%= link_to topic.title, topic %></td>"
   }
@@ -36,24 +37,21 @@ explanation {
 
   source_code :erb, "<td><%= topic.description %></td>"
 
-  message "This line was getting the description using .description and just printing it out."
+  message "這一行用了 .description 來取得內文，然後直接輸出。"
 
   source_code :erb, "<th>Description</th>"
 
   message "
-  `<th>` stands for table header and everything between `<th>` and
-  `</th>` was being printed as a table header (bold). We removed it
-  since we removed the description and it would look funny to have the
-  header and the wrong thing below it."
+  `<th>` 指的是表格表頭（table header），在 `<th>` 和 `</th>`
+  之間的字會變成表頭（粗體）。我們把它刪掉，因為我們要拿掉內文欄位，不然的話欄位對不起來會很奇怪。"
 
   hr
 
   source_code :erb, "<td><%= link_to topic.title, topic %></td>"
 
   message "
-  Here's another use of `link_to` to create a link on the page. This
-  `link_to` creates a link using the text from the topic title and goes
-  to the topic#show page."
+  這裡來了一個新的 `link_to`（製作超連結）的用法。這次製作的超連結使用了 topic
+  的標題（title），連到 topics#show 的頁面。"
 }
 
 next_step "clean_up_links_on_the_topics_list"
