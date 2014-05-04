@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'digest/md5'
 require 'erector'
+require 'i18n'
+require 'i18n/backend/fallbacks'
 
 #require 'wrong'
 #include Wrong::D
@@ -22,6 +24,12 @@ require "site"
 class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, with more explicit config
   include Erector::Mixin
 
+  configure do
+    I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
+    I18n.load_path = Dir[File.join(settings.root, 'locales', '*.yml')]
+    I18n.backend.load_translations
+  end
+
   def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
@@ -42,7 +50,8 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     if host && sites.include?(site = subdomain)
       site
     else
-      @default_sites[locale.to_sym]
+      # FIXME: symbol DoS
+      @default_sites[I18n.locale.to_sym]
     end
   end
 
@@ -55,7 +64,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   end
 
   def sites_dir
-    Site.sites_dir(locale)
+    Site.sites_dir(I18n.locale)
   end
 
   def sites
@@ -68,7 +77,11 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     }
   end
 
-  def locale
+  before do
+    I18n.locale = get_locale
+  end
+
+  def get_locale
     (params && (params[:locale] or params[:l])) or
       (host && subdomain =~ /^..$/ && subdomain) or   # note: only allows 2-char locales for now -- should check against a list of locales
       (ENV['SITE_LOCALE']) or
@@ -99,11 +112,11 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
       options = {
         site_name: params[:site],
         page_name: params[:name],
-        doc_title: Titleizer.title_for_page(params[:name]),
+        doc_title: Titleizer.title_for_page(params[:site], params[:name]),
         doc_path: doc_path,
         back: params[:back],
         src: src,
-        locale: locale,
+        locale: I18n.locale,
       }
 
       case ext
@@ -159,7 +172,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
         doc_title: doc_path.split('/').last,
         doc_path: doc_path,
         src: src,
-        locale: locale,
+        locale: I18n.locale,
       ).to_html
     rescue Errno::ENOENT => e
       p e

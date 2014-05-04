@@ -25,7 +25,7 @@ class DocPage < Html5Page
   end
 
   def site_title
-    Titleizer.title_for_page(site_name)
+    Titleizer.title_for_page(site_name, site_name)
   end
 
   def page_title
@@ -124,7 +124,7 @@ class DocPage < Html5Page
         div.back {
           text "Back to "
           a(class: "back", href: URI.escape(@back, URI::PATTERN::RESERVED)) do
-            text Titleizer.title_for_page(@back.split('#').first)
+            text Titleizer.title_for_page(site_name, @back.split('#').first)
           end
         }
       end

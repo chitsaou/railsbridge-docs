@@ -128,7 +128,7 @@ class Step < Erector::Widget
         yield
       end
     else
-      a Titleizer.title_for_page(name), {:href => href}.merge(options)
+      a Titleizer.title_from_page_name(name), {:href => href}.merge(options)
     end
   end
 
@@ -201,7 +201,7 @@ class Step < Erector::Widget
     div class: 'site-desc' do
       h2 do
         a href: "/#{site_name}" do
-          text Titleizer.title_for_page(site_name)
+          text Titleizer.title_for_page(site_name, site_name)
         end
       end
       div raw(md2html description)

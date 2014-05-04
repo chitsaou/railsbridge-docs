@@ -19,7 +19,7 @@ describe SiteIndex do
     current_site = index_html.css("li.current").first.text.capitalize
     current_site.should == 'Frontend'
 
-    pretty_sites = @site_index.sites.map { |x| Titleizer.title_for_page(x) }
+    pretty_sites = @site_index.sites.map { |x| Titleizer.title_for_page(x, x) }
 
     other_sites = index_html.css('a').map(&:text)
     other_sites.should =~ (pretty_sites - ['Frontend'])

@@ -156,7 +156,7 @@ class Contents < Erector::Widget
   end
 
   def toc_link page, options = {}
-    link_text = Titleizer.title_for_page(page.sub(%r{^/}, ''))
+    link_text = Titleizer.title_for_page(@site_name, page.sub(%r{^/}, ''))
     path = page.start_with?('/') ? page : "/#{@site_name}/" + page
     collapse_classes = if options[:collapsable]
                          options[:collapsed] ? 'collapsable closed' : 'collapsable'

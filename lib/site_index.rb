@@ -9,12 +9,12 @@ class SiteIndex < Erector::Widget
 
   def site_link site
     if site == site_name
-      return li Titleizer.title_for_page(site_name), class: 'current'
+      return li Titleizer.title_for_page(site_name, site_name), class: 'current'
     end
 
     path = "/#{site}/"
     li do
-      a(Titleizer.title_for_page(site), :href => path)
+      a(Titleizer.title_for_page(site, site), :href => path)
     end
   end
 
