@@ -1,22 +1,22 @@
-message "Installing XCode is straightforward with one caveat. When it asks you about the components to install you need to make sure \"Unix Tools\" is selected. Other than that just click Continue/Okay/Yes/etc."
+message "安裝 Xcode 很簡單，但有一個地方要注意，當它問你要安裝什麼 components 的時候，請確定有選 \"Unix Tools\"。此外就一直下一步、下一步、完成。"
 
-option "Install XCode from the Apple App Store (OSX 10.7 Lion or greater)" do
+option "從 App Store 安裝 Xcode（適用 OSX 10.7 Lion 以上）" do
   link "install_xcode_from_app_store"
 end
 
-option "Install XCode from a thumb drive or DVD (OSX 10.6 Snow Leopard)" do
+option "從還原光碟或 USB 安裝 Xcode（適用 OSX 10.6 Snow Leopard）" do
   link "install_xcode_from_dvd"
 end
 
-option "Install Command Line Tools for XCode" do
-  message "Visit the [Apple Developer Downloads Page](https://developer.apple.com/downloads)"
-  message "Download and install the latest **Command Line Tools for Xcode** package"
+option "安裝 Xcode 的 Command Line Tools" do
+  message "請上 [Apple Developer 網站的下載區](https://developer.apple.com/downloads)"
+  message "下載最新的 **Command Line Tools for Xcode** 安裝包，然後安裝。"
 end
 
-verify "your compiler was installed" do
+verify "你的編譯器有安裝完成" do
   console "gcc --version"
   result "i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00)"
 
-  message "Your results might differ somewhat. Basically, as long as it doesn't say something like 'command not found', you're probably cool."
+  message "你看到的結果可能會有些不同。基本上，如果它沒有跟你說 'command not found' 那大概就 OK 了。"
 end
 
