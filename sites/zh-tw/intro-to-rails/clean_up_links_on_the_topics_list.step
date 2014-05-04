@@ -1,41 +1,41 @@
 goals {
 
-  message "Our app is nearly done! The main topics listing page is pretty busy. There are a lot of links that aren't necessary."
+  message "我們的程式快要完成了！topics 列表頁看起來很冗。其實有一些連結是無用的。"
 
-  message "Let's clean up the topics list page by doing the following:"
+  message "來清理一下吧："
 
-  goal "Remove the 'show' link"
-  goal "Remove the 'edit' link"
-  goal "Change 'destroy' to 'delete'"
+  goal "拿掉 'show' 超連結。"
+  goal "拿掉 'edit' 超連結。"
+  goal "把 'destroy' 改成 'delete'。"
 }
 
 steps {
-  step "Remove the 'show' and 'edit' links" do
-    message "Open `app/views/topics/index.html.erb` and remove these two lines:"
+  step "拿掉 'show' 和 'edit' 超連結" do
+    message "打開 `app/views/topics/index.html.erb` 刪除這兩行："
     source_code :erb, <<-HTML
 <td><%= link_to 'Show', topic %></td>
 <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
     HTML
   end
 
-  step "Change 'destroy' to 'delete'" do
+  step "把 'destroy' 改成 'delete'" do
 
-    message "Change the line with the word 'Destroy' to this:"
+    message "把有 'Destroy' 字樣的那一行修改成這樣："
     source_code :erb, "<td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>"
   end
 
-  step "Confirm your changes" do
+  step "確認修改成功" do
 
-    message "Now save your file and try reloading in your browser to see the changes."
+    message "存檔，然後重新整理瀏覽器，看看修改有沒有成功。"
   end
 }
 
 
 explanation {
   message <<-MARKDOWN
-  * The two links we removed were show and edit.  We did this because the title now links to the show page and from the show page you can reach the edit page.
+  * 我們拿掉的兩個超連結是 show 和 edit。這樣做是因為標題已經連到 show 頁面了，在 show 頁面裡面可以連到 edit 頁面。
 
-  * The second change we made was to make the link text 'Delete' instead of destroy.
+  * 第二個修改是把連結文字從 'Destroy' 改成 'Delete'。
   MARKDOWN
 }
 

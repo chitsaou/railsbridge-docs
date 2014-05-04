@@ -1,56 +1,49 @@
 goals {
 
   message <<-MARKDOWN
-  Now that the structure is complete, let's make the flow work smoothly.
+  現在結構已經打好了，來把流程變順暢吧。
 
-  Currently when you go to <http://localhost:3000> you see the "Welcome aboard" message.
+  現在你打開 <http://localhost:3000> 的話，你會看到 "Welcome aboard" 的字樣。
 
-  It would be easier to use our app if <http://localhost:3000> went directly to the topics list.
+  如果 <http://localhost:3000> 可以直接跑到 topics 列表的話會比較方便哦。
 
-  In this step we'll make that happen and learn a bit about routes in Rails.
+  在這一步我們會實現它，並從中學習 Rails 路由（routes）的基本。
   MARKDOWN
 }
 
 steps {
 
-  step "Add a root route" do
-    message "Open the file `config/routes.rb` in an editor."
+  step "加入 root route" do
+    message "在編輯器打開 `config/routes.rb`。"
 
-    message "Search the file for **root**, it should be near the top if you are using Rails 4."
+    message "搜尋 **root**，用 Rails 4 的話會在最上方。"
 
-    message "Uncomment the line that contains the example command by removing the `#` sign in front of it, and change it to read `root 'topics#index'`. When you are done the line should look like this:"
+    message "解除下面這一行的註解，方法是把行頭的 `#` 刪除掉。接著改成 `root 'topics#index'`。完成後會長得像這樣："
 
     source_code :ruby, <<-RUBY
 root 'topics#index'
     RUBY
 
     em do
-      message "(Rails 3.x users should add `root to: 'topics#index'` and will need to remove their `public/index.html` file)."
+      message "（Rails 3.x 要改加 `root to: 'topics#index'` 還要刪掉 `public/index.html` 這個檔案。）"
     end
   end
 
-  step "Confirm your changes" do
-    message "Go back to <http://localhost:3000/>. You should be taken to the topics list automatically."
+  step "確認修改成功" do
+    message "回到 <http://localhost:3000/>。你應該會被帶到 topics 列表。"
   end
 }
 
 explanation {
 
  message <<-MARKDOWN
-  * `root 'topics#index'` is a rails route that says the default
-    address for your site is `topics#index`. `topics#index` is the topics
-    list page (the topics controller with the index action).
-  * Rails routes control how URLs (web addresses) get matched with
-    code on the server. Similar to how addresses match with houses and
-    apartments.
-  * The file `config/routes.rb` is like an address directory listing the
-    possible addresses and which code goes with each one
-  * `routes.rb` uses some shortcuts so it doesn't always show all the
-    possible URLs. To explore the URLs in more detail we can use the
-    terminal.
+  * `root 'topics#index'` 這個 route 是用來告訴 rails 你的網站的預設位置是 `topics#index`。
+    `topics#index` 指的是列出 topics 的那個頁面（Topics Controller 的 index action）。
+  * Rails routes 控制了 URL（網址）如何對應到 server 上的程式碼。就好比地址對應到房子或公寓。
+  * `config/routes.rb` 檔像是一個地址簿，列出所有可以使用的地址，以及對應到的程式碼。
+  * `routes.rb` 使用了一些簡寫法，所以我們不會在檔案裡看到所有的 URL。可以利用終端機來看看有哪些 URL。
 
-  At the terminal type `rake routes`. You should get something that
-  looks like this:
+  在終端機輸入 `rake routes`。你會看到像這樣的東西：
 
   ````
     $ rake routes
@@ -66,19 +59,20 @@ explanation {
                DELETE /topics/:id(.:format)      topics#destroy
           root GET    /                          topics#index
   ````
-  This shows all the URLs your application responds to. The code that starts with colons are variables so :id means the id number of the record. The code in parenthesis is optional.
+  這樣就可以顯示所有你的應用程式會處理的 URL 了。有些冒號（`:`）開頭的是變數，
+  :id 表示資料的 id 編號。括號框起來的是可以省略的。
 
-  In Rails 4, you can also get this information on your site in development. Go to <a href="http://localhost:3000/rails/info">http://localhost:3000/rails/info</a> and you'll see something like this:
+  在 Rails 4 裡面，你也可以在開發環境從你的網站上直接看到這個資訊。請打開
+  <a href="http://localhost:3000/rails/info">http://localhost:3000/rails/info</a>
+  你就會看到像這樣的東西：
 
   <img src='img/rails4_rails_info_routing.png'>
 
-  You'll also see that table in Rails 4 whenever you try to access an invalid route (try <a href="http://localhost:3000/sandwich">http://localhost:3000/sandwich</a>)
+  如果你隨便開一個不存在的網址，也會看到這個畫面。（試試看 <a href="http://localhost:3000/sandwich">http://localhost:3000/sandwich</a>）
 
-### Exploring Routes (optional)
+### Exploring Routes （可以跳過）
 
-  Now you can have a look at the paths that are available in your app.
-  Let's try looking at one of the topics routes we just generated.
-  Open up your rails console and play:
+  現在你可以看看你的程式裡面可以用的 path 有哪些。我們來試試看我們剛剛產生的一個 topics 的 route。打開 rails console 來玩玩看：
 
     $ rails console
     >> app.topics_path
@@ -86,10 +80,8 @@ explanation {
     >> app.topics_url
     => "http://www.example.com/topics"
 
-  `app` is a special object that represents your entire application.
-  You can ask it about its routes (as we just did), play with its
-  database connections, or make pseudo-web requests against it with
-  `get` or `post` (and lots more).
+  `app` 這個特別的 object 表示你的整個應用程式。
+  你可以問它有什麼 route、玩玩看資料庫連線、或是模擬 `get`、`post` 的 web requests（還有很多）。
 
   MARKDOWN
 }

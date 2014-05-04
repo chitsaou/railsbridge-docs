@@ -1,22 +1,23 @@
-message <<MARKDOWN
-Guess what?  _**You're done!!!**_ Congratulations, you just \"finished\" your first rails app!
+message <<-MARKDOWN
+你知道嗎？_**你做完了！！！**_ 賀！你剛「完成」了你的第一個 Rails 程式！
 
-(They're never _really_ ever finished... have fun tweaking it!)
+（嗯……其實沒有*真的*做完，你可以隨便改改看！）
 
-# Extra Credit
+# 加分題
 
-If you got all the way through Suggestotron with some time to spare, here's some extra stuff you can try:
+如果你完成了 Suggestotron 而還剩下一些時間，你可以試試看這些：
 
-* Add a downvote button that does the opposite of what the upvote button does
-* Sort topics by their number of votes
-* Add an 'about' page, linked from the bottom of the Suggestotron topics list. Link back to the Topics list from the About page so users don't get stranded.
-* If your class has a **lot** of time left over:
-  * Users should be allowed to vote only once: give votes a user_id and allow a user to have voted on each topic only once. But wait, what is a 'user' in our system? Get a volunteer to introduce everyone to [Devise](https://github.com/plataformatec/devise), a simple way to add authentication to a Rails application.
+* 加一個「扣分」按鈕，做的事跟加分按鈕相反。
+* 根據投票分數排序 topics。
+* 加一個 'about' 頁面，從 topics 列表的最下面連過去。然後從 About 頁面連回 Topics 列表，這樣使用者才不會卡住。
+* 如果你這次上課剩下**很多**時間，可以試試看：
+  * 限制使用者只能投票一次：在投票記錄加一個 user_id 然後限制每個使用者對每一篇 topic 都只能投票一次。不過首先要定義什麼是「使用者（user）」。你可以請助教來跟大家講一下什麼是 [Devise](https://github.com/plataformatec/devise)，它可以很輕易就在 Rails 程式裡面加入使用者認證系統。
   * Users should be able to give a post a 'negative' vote instead of a positive one. How might you represent that in this system?
+    （[譯註]：似乎跟第一題重複）
 
 MARKDOWN
 
-h1 "Authors"
+h1 "作者群"
 
 ul do
   li "Sarah Allen"
@@ -27,13 +28,13 @@ ul do
   li "...and many, many others"
 end
 
-h1 "What next?"
+h1 "現在往哪裡去？"
 
 ul do
-  li "Probably time for the closing presentation." 
+  li "大概是工作坊的結束時間了。" 
   li "After that, start a project, tutorial, and come back again!"
   li do 
-    span "All our favorite resources can be found on the RailsBridge site: " 
+    span "我們喜歡的學習資源都在 RailsBridge 網站上面可以找到：" 
     a "http://railsbridge.org/learn/resources", href: "http://railsbridge.org/learn/resources"
   end
 end
