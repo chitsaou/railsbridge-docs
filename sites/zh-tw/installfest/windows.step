@@ -1,68 +1,68 @@
 message <<-MARKDOWN
-These instructions should work for all versions of Windows from XP to Windows 8.
+本文件適用 Windows XP 到 Windows 8。
 
-You may need to login as Administrator, or give the Administrator password when installing some programs, depending on your Windows version and user settings.
+依據版本不同，你會需要使用 Administrator 的身份登入，或是在安裝某些軟體的時候打 Administrator 的密碼。
 MARKDOWN
 
-step "Run RailsInstaller" do
+step "跑 RailsInstaller" do
 
   message <<-MARKDOWN
-  RailsInstaller includes Rails, Ruby, Git, and SQLite.
+  RailsInstaller 一鍵安裝包裡面有 Rails、Ruby、Git、SQLite。
 
-  Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby 1.9.
+  請上 <http://railsinstaller.org/>，往下捲到 'Downloads' 那一段，然後下載 RailsInstaller for Windows/Ruby 1.9。
 
-  Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults.
+  按兩下打開下載完成的安裝檔來啟動安裝程式。它問什麼都按下一步，一律預設值。
 
-  Be sure to check the boxes for *Install git (recommended)* and  *Add executables for Ruby, DevKit Git (if checked above) to the PATH*
+  不過要確定有打勾 *Install git (recommended)* 和 *Add executables for Ruby, DevKit Git (if checked above) to the PATH* 這兩個選項。如下圖。
 
   ![WinRailsInstaller.jpg](img/WinRailsInstaller.jpg)
 
-  Rails will be installed in C:\\RailsInstaller and the directory for your Rails projects will be C:\\Sites
+  Rails 會被裝進 C:\\RailsInstaller，你的 Rails 專案的資料夾會是 C:\\Sites。
 
   MARKDOWN
 end
 
-step "Configure your git and ssh environment" do
+step "設定 git 和 ssh" do
 
-  important "At the end of the installer there will be a checkbox asking 'configure your git and ssh environment'. **Leave this box checked.** It will open a terminal window that you need to **type into**."
+  important "在安裝程式的最後面會有一個打勾框「configure your git and ssh environment」，**請讓它打勾。**它會開一個終端機視窗，你要**打一些字進去**。"
 
-  message "When it asks *Please enter your name, for example mine is: Wayne E. Seguin*"
-  message "Type *your actual full name* into the console and press **[enter]**"
+  message "當它問你 *Please enter your name, for example mine is: Wayne E. Seguin*"
+  message "請輸入*「你的本名」*然後按**[enter]**"
 
-  message "When it asks *Please enter your email address, for example mine is: wayneeseguin@gmail.com*"
-  message "Type *your actual email address* into the console and press **[enter]**"
+  message "當它問你 *Please enter your email address, for example mine is: wayneeseguin@gmail.com*"
+  message "請輸入*「你真正的 email」*然後按**[enter]**"
 
-  important "Use the **same email address** for heroku, git, github, and ssh."
+  important "請在 Heroku、Git、GitHub、SSH 使用**相同的 Email**。"
 
   tip do
-    message "After this step you will have some **git config settings** and you will also have an **ssh key**."
+    message "這做完之後，你就會有 **git 設定檔**和一把 **ssh key**。"
   end
 
 end
 
-step "Windows 8 Only — Install Node.js" do
+step "Windows 8 才要的──安裝 Node.js" do
 
-  message "Go to <http://nodejs.org> and download the installer"
+  message "請上 <http://nodejs.org> 然後下載安裝程式。"
 
-  message "Click on the downloaded file to run the install wizard. Click Next at each step to accept the defaults."
+  message "按兩下打開下載完成的安裝檔來啟動安裝程式。它問什麼都按下一步，一律預設值。"
 
-  message "**Reboot your computer.**"
+  message "**重新開機。**"
 
-  message "Once your computer is back up, load **Command Prompt with Ruby and Rails** (see below) and..."
+  message "開機完成後，打開 **Command Prompt with Ruby and Rails**（見下文），然後檢查看看，"
 
   console "node -v"
   fuzzy_result "v0{FUZZY}.8.x{/FUZZY}"
 end
 
-step "Update Rails" do
-  message "Currently, RailsInstaller installs Rails 3.2.x, but we want 4.x. Upgrading Rails is pretty easy:"
+step "升級 Rails" do
+  message "現在 RailsInstaller 幫我們安裝的是 Rails 3.2.x，不過我們要的是 4.x。要升級 Rails 很簡單："
 
   console "gem install rails"
 
-  message "...and you're done. New Rails! Woo."
+  message "……這樣就好了。新版 Rails！喔耶！"
 end
 
-step "Sanity Check" do
+step "確認一切正常" do
 
   console "ruby -v"
   fuzzy_result "ruby 1.9.3{FUZZY}p125{/FUZZY}"
@@ -72,59 +72,62 @@ step "Sanity Check" do
 
 end
 
-step "Open a Terminal" do
-  message "Much of using Rails is typing commands and hitting **[enter]**.  Your experience using Rails on Windows greatly depends on your making friends with the terminal window.  Normally you will work in a terminal window and keep it open along with your browser."
+step "打開終端機" do
+  message "大部份使用 Rails 的方式是打指令然後敲 **[enter]**。在 Windows，Rails 要學得好，你得先跟終端機打好關係。通常你會在終端機裡面做事，然後把它跟瀏覽器一起開著不關。"
 
-  tip "The Terminal is also called the Command Prompt, Command Line, DOS Prompt, or DOS Window."
+  tip "終端機又叫「命令提示字元」、「命令列」、「DOS 提示字元」、「DOS 視窗」。"
 
-  message "RailsInstaller made a special Terminal for you to use when you're working on Ruby, Rails, or Git."
+  message "RailsInstaller 幫你準備了一個特別的終端機，給你方便使用 Ruby、Rails、Git。"
 
-  message "To open the special Terminal, choose **All Programs** on the Start menu, then choose **RailsInstaller** and then **Command Prompt with Ruby and Rails**. You should do all your Rails work in this RailsInstaller DOS window."
+  message "要打開這個特別的終端機，請按開始 → **所有程式** → **RailsInstaller** → **Command Prompt with Ruby on Rails**。請在這個 RailsInstaller DOS 視窗裡面做所有跟 Rails 有關的事。"
 
   img src: 'img/railsbridge_findingCommandPrompt.png'
 
-  tip "Pin It to Win It" do
+  tip "把它固定在工具列" do
     img src: 'img/railsbridge_windowsScreenshot-commandprompt-pinnedtotaskbar.png', alt: 'Pin the Command Prompt to the Task Bar'
   end
 
-  message "Here is a summary of your settings after this process:"
+  message "下圖是你做完這一步之後會看到的設定值："
 
   img src: 'img/railsbridge_windowsScreenshot-commandprompt_ror.jpg'
 
 end
 
-step "Configure the Windows Terminal" do
-  message "Take a moment to configure the *Command Prompt with Ruby and Rails* so that it is a good height and width and has a nice font.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
+step "設定 Windows 終端機" do
+  message "花點時間來設定 *Command Prompt with Ruby and Rails*，把尺寸和字型調整好。
+  講個秘訣──設定方式寫在下面這個連結裡面，按一下可以看設定方式，設定完成之後，按瀏覽器的**上一頁**按鈕可以回到這裡來。"
 
   link "configure_the_windows_terminal"
 
-  tip "Clearing the Terminal" do
-    message "If you ever want to clear the terminal of all its cluttered output"
+  tip "淨空終端機" do
+    message "你如果想要淨空終端機畫面的話，請隨時輸入指令："
     console "cls"
   end
 
-  tip "Command History" do
-    message "The terminal window stores a \"command history.\" To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it -- this is handy for long commands, or fixing mistakes, or for cycles (series of commands) that you repeat."
+  tip "指令記錄" do
+    message "終端機視窗會記住你的「指令記錄」。要看有什麼指令或是再度執行之前的指令的話，請使用方向鍵 ↑ 和 ↓。你也可以修改之前的指令再執行──便於執行超長的指令、修正之前指令的錯誤、重覆執行數個指令。"
   end
 
-  tip "Copy and Paste" do
+  tip "複製貼上" do
 
-    message "It's usually better to type commands in yourself. It takes a little longer but you learn more."
+    message "通常來說自己打指令會比較好，雖然費時費力，但比較會學到東西。"
 
-    message "But if you must... in these instructions, where it says: \"Type this in the terminal:\", you can usually copy the command from this page, and right click in the menu bar or terminal window, then click on \"Paste\", then hit the **[enter]** key."
+    message "但如果你真的要……好啦，在課程裡面，如果說要「在終端機打這些字：」，你可以把指令複製起來，然後在終端機裡面或標題列按右鍵，然後選「貼上」，再按**[enter]**鍵就行了。"
   end
 end
 
-step "Install a Text Editor" do
-  message "You need a text editor to do Ruby. If you already have a preferred text editor, such as vi, emacs, jedit, etc., you can skip this step. It must be a plain text editor and not something with styling like Microsoft Word or WordPad."
+step "安裝文字編輯器" do
+  message "你需要文字編輯器來寫 Ruby 程式。如果你已經有喜歡的編輯器，好比說 vi、emacs、jedit 等，你可以跳過。不過，必須一定要是純文字編輯器，不可以是可以塗色改字體的那種，好比說 Microsoft Word 或 WordPad。"
 
-  message "Notepad is not a good programming editor, but it will work in a pinch."
+  message "記事本不是好用的程式用編輯器，但基本上可以用。"
 
-  important "**When in doubt, use Sublime Text 2.**"
+  important "**不知道要選什麼的話，請選 Sublime Text 2。"
 
-  message "[Sublime Text 2](http://www.sublimetext.com/2) is a good option, if you don't have one yet."
+  message "你如果沒有編輯器的話，[Sublime Text 2](http://www.sublimetext.com/2) 不錯。"
 
-  message "Download Sublime Text 2 here: <http://www.sublimetext.com/2>"
+  message "請到這裡下載 Sublime Text 2：<http://www.sublimetext.com/2>"
 end
 
 next_step "configure_git"
+
+

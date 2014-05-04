@@ -1,14 +1,14 @@
-step "Configure the Windows Terminal" do
-  message "Right-click on the menu bar and select **Properties**"
+step "設定 Windows 的終端機" do
+  message "在標題列按右鍵選**「內容」**"
 
-  message "Under the *Options* tab, check the box for **QuickEdit Mode**. This will let you visually cut and paste."
+  message "在*「選項」*標籤頁裡面，把**「快速編輯模式」**打勾，這樣你就可以用滑鼠複製貼上。"
 
-  message "Under the *Font* tab, select Lucida Console from the font chooser box. This lets you view non-ascii characters."
+  message "<del>在*「字型」*標籤頁裡面，選 Lucida Console，這樣外國文字就不會亂碼了。</del>（譯註：Windows 繁中版用細明體很好，這一步可以跳過）"
 
-  message "In the *Layout* tab, adjust *Window Size* so the window is about half as wide as your screen, and is as tall as possible without covering the task bar (this may require some trial and error)."
+  message "在*「版面配置」*標籤頁裡面，調整*「視窗大小」*讓寬度大概佔螢幕的一半，高度盡量填滿螢幕。（要多試幾次）（譯註：在 XP 稱為「版面設定」標籤頁）"
 
-  message "In the *Layout* tab, increase **Screen Buffer Size** Height to 1000."
+  message "在*「版面配置」*標籤頁裡面，把**螢幕緩衝區大小**的高度調到 1000。"
 
-  message "Click OK. In the dialog that comes up, select **Modify shortcut that started this window.**"
+  message "按一下確定，會出現一個視窗，請選**「儲存內容，讓相同的標題視窗使用」**。"
 end
 

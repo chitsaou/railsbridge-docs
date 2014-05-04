@@ -1,14 +1,16 @@
 important <<-MARKDOWN
-  These steps apply to **Ubuntu Linux** only. If you are using some other flavor of Linux, get help from a TA.
+  這裡的操作步驟只測過 **Ubuntu Linux**。如果你用的是別的 Linux，遇到問題時，請舉手問助教。
 MARKDOWN
 
 message <<-MARKDOWN
-You will need sudo access in order to complete these directions (The first user account has this by default).
+你會需要 sudo 才能完成這些操作（第一個使用者帳號會預設有 sudo 權限）。
+
+*（譯註：需要用真的 Ubuntu 確認 UI 翻譯詞）*
 MARKDOWN
 
-step "Install packaged software and libraries" do
+step "安裝事先包好的軟體和程式庫" do
   message <<-MARKDOWN
-Open a terminal (Applications > Accessories > Terminal).  You may want to right-click on the terminal icon and select "Add to panel" so the icon will appear next to the default help and firefox icons in the top panel.
+  打開終端機（應用程式 → 附屬應用程式 → 終端機）。你或許會想要在那圖示上按右鍵然後選 Add to Panel，這樣子圖示會出現在最上方預設的說明和 Firefox 圖示旁邊。
   MARKDOWN
 
   apts = %w{
@@ -17,11 +19,11 @@ Open a terminal (Applications > Accessories > Terminal).  You may want to right-
     bison
     build-essential
     curl
-	git-core
-	libapr1
-	libaprutil1
-	libc6-dev
-	libltdl-dev
+    git-core
+    libapr1
+    libaprutil1
+    libc6-dev
+    libltdl-dev
     libreadline6
     libreadline6-dev
     libsqlite3-0
@@ -43,41 +45,42 @@ Open a terminal (Applications > Accessories > Terminal).  You may want to right-
 
 end
 
-step "Install git" do
+step "安裝 git" do
   console "sudo apt-get install git"
 
-  message "If this results in an error, you should be ok, as the prior step should have installed `git-core`"
+  message "如果你看到錯誤，或許其實也沒問題，因為先前我們安裝過了 `git-core`。"
 end
 
-step "Install RVM" do
+step "安裝 RVM" do
   important do
-    message "If you're using Ubuntu 12.04 or the latest version of Mint, ensure that the Run command as login shell option is checked under the Title and Command tab in Profile Preferences (located in Terminal's Edit menu). After changing this setting, you may need to exit your console session and start a new one before the changes take affect."
+    message "如果你用 Ubuntu 12.04 或最新版的 Mint，請確認在 Edit 功能表 → Profile Preferences → Title and Command → Run command as login shell 這個選項有打開。這個選項修改過之後，你需要開一個新的 console session 才能生效。"
     img src: 'img/railsbridge_ubuntu12-checkbox.png', alt: "Ubuntu 12.04 terminal settings"
   end
   insert "install_rvm"
 end
 
-step "Install Ruby" do
+step "安裝 Ruby" do
   insert "install_ruby"
 end
 
-step "Install Rails" do
-  message "Using a terminal again, execute the following command to install rails."
+step "安裝 Rails" do
+  message "打開終端機，執行以下指令來安裝 Rails。"
 
   console "gem install rails"
 end
 
 step "Sublime Text 2" do
   message <<-MARKDOWN
+如果你沒有喜歡的程式編輯器，你可以裝 Sublime Text 2。32-bit 和 64-bit 版本都有。
 
-If you don't have a preferred code editor, you can install Sublime Text 2. It's available for [32-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.tar.bz2) and [64-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20x64.tar.bz2)
-
-Check <http://www.sublimetext.com/2> for the latest version.
+請上 <http://www.sublimetext.com/2> 下載最新版本。
 MARKDOWN
 
-  tip "How many bits?" do
-    message %q{If you're not sure, you're probably 32-bit. Run `uname -i` and see. "x86" in the filename means 32-bit, and "x86_64" means 64-bit.}
+  tip "啥米 bit？" do
+    message "你如果不確定的話，大概就是 32-bit 了。可以執行 `uname -i` 指令來確認。\"x86\" 指的是 32-bit，\"x86_64\" 指的是 64-bit。"
   end
 end
 
 next_step "configure_git"
+
+
