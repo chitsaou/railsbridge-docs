@@ -18,6 +18,7 @@ zh-tw:
     step_title_suffix: "："
     expand_all: "全部展開"
     other_pages: "其他頁面"
+    back_to: "回到"
 
   header_section:
     steps: "步驟"
