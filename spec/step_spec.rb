@@ -128,7 +128,7 @@ describe Step do
       RUBY
       assert_loosely_equal(@html, <<-HTML.strip_heredoc)
         <div class="console">
-          <span>#{Step::TERMINAL_CAPTION}</span>
+          <span>#{I18n.t('captions.terminal')}</span>
           <pre>echo hi</pre>
         </div>
       HTML
@@ -143,7 +143,7 @@ describe Step do
 
       assert_loosely_equal(@html, <<-HTML.strip_heredoc)
         <div class="result">
-          <span>#{Step::RESULT_CAPTION}</span>
+          <span>#{I18n.t("captions.result")}</span>
           <pre>hi</pre>
         </div>
       HTML
@@ -158,7 +158,7 @@ describe Step do
 
       assert_loosely_equal(@html, <<-HTML.strip_heredoc)
         <div class="result fuzzy-result">
-          <span>#{Step::FUZZY_RESULT_CAPTION}</span>
+          <span>#{I18n.t("captions.fuzzy_result")}</span>
           <pre>
             hello <span class="fuzzy-lightened">fuzz</span> face! nice <span class="fuzzy-lightened">banana</span>
             i am more text!
