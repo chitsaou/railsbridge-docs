@@ -130,6 +130,7 @@ class Step < Erector::Widget
       h1 do
         prefix I18n.t("general.next_step")
       end
+      # FIXME: Translate with i18n. Currently it is hard to get site_name.
       link name
     end
   end
