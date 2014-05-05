@@ -1,21 +1,21 @@
 requirements do
 message <<-MARKDOWN
-* 你應該要有一個全新的 rails app ，搭配一頁在你掌控之下的靜態 home page。 確認負責這一頁的 controller 是否稱作 **HomeController**.
-* 你，開發者， 應該跟老師、助教或同伴解釋 Rails 是如何知道該 render home view 的。
+* 你需要一個全新的 rails app ，搭配一頁靜態 home page。 確認負責這一頁的 controller 是否稱作 **HomeController**.
+* 身為開發者的你，應該跟老師、助教或同伴解釋 Rails 是如何知道要 render home view 的。
 MARKDOWN
   img class: 'noborder', src: 'img/static_home_page.png'
 end
 
 discussion do
 message <<-MARKDOWN
-* 為了要擁有一頁靜態 home page， 你需要一個 route、一個 controller、一個 view。討論吧！
+* 為了要擁有一頁靜態 home page， 你需要一個 route、一個 controller 和一個 view。熱烈討論吧！
   * 請謹慎。 如果你沒有討論這些東西，事情會變得非常困難。 
-* Rails 有很多 Generators。 請嘗試探索看看 `rails generate` 的輸出。
-* 在此課程中，我們現在不會使用 `rails generate scaffold` 這個指令。 因為你將會自己 generate 所有你的 Models、Views 以及 Controllers，這樣會強制你更努力地進行「知識建築」工作。 老師/助教 或許會建議一些他們在真實世界做的事以及這個選擇對於學習上的優點，他們的想法是什麼。
+* Rails 有很多 Generators。 請嘗試探索看看 `rails generate` 指令的輸出。
+* 在此課程中，我們現在不會使用 `rails generate scaffold` 這個指令。 因為你將會自己 generate 所有你的 Models、Views 以及 Controllers，這樣才可以強制你更努力地理解一些東西。 老師/助教 或許會建議一些他們在真實世界中會做的事以及關於這個選擇對於學習上的優點，他們的想法是什麼。
 * 你需要新增什麼至 home controller (在你產生它之後) 才能擁有一頁靜態 home page?  
-* home/index.html.erb view 檔案如何與 layouts/application.html.erb view 檔案相關聯?
+* home/index.html.erb view 檔案與 layouts/application.html.erb view 檔案有什麼關聯?
 * application view 裡面的欄位，意義是什麼?
-* home controller 做了什麼?
+* home controller 做了什麼事情?
 MARKDOWN
 end
 
@@ -28,7 +28,7 @@ end
 
 hints do
 message <<-MARKDOWN
-* 如果你不知道要放置什麼到 home controller 裡面，或許可以嘗試看一下以前做的 Railsbridge app? 或是其他你撒謊的 rails app? 
+* 如果你不知道要放置什麼到 home controller 裡面，或許可以嘗試看一下以前做的 Railsbridge app? 或是其他你做過的 rails app? 
 MARKDOWN
 end
 

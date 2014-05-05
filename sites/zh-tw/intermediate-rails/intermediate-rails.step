@@ -8,8 +8,8 @@ message <<-MARKDOWN
 
 ## 目標
 * 創造一個東西！
-* 瞭解在一個 RailsApp 中, Model, View, Controller 做了什麼事情, 以及他們如何一起運作
-* 更舒適地將錯誤訊息使用為指引，而非將之視為恐怖的東西。
+* 瞭解在一個 RailsApp 中, Model, View, Controller 做了什麼事情, 以及它們如何一起運作
+* 可以更自在地面對錯誤訊息，將之視為指引，而非恐怖的東西
 
 ## 接下來將會發生什麼事情？ 
 * 我們將會製作一個 Message Board System, 會有一個前頁顯示文章, 透過點擊可以觀看原文及底下的討論串。
@@ -24,17 +24,17 @@ message <<-MARKDOWN
   * Challenge 7: 直接回覆於一篇文章的某一行
   * Challenge ∞: 其他任何你想要的 features
 
-* 每次使你的 app 進入功能狀態時，在新增更多的 features 之前，COMMIT TO GIT！  新 features 可能會破壞原本整齊的東西, 如果需要, 你將會冀望能夠回覆至之前的版本。
+* 每次新增功能到你的 app 後，在新增更多 features 之前，請 COMMIT TO GIT！  添加新 features 可能會使整個 app 炸掉, 這時你會冀望能夠回復至之前的版本的。
 
-極其重要的注意事項: 我們稱這些區塊為 challenges 正是因為它們極具挑戰性！ 透過協作, 此課程將會是最有趣的 - 與你的老師、助教、同學談論事情。 此課程的風格會非常不同於 Suggestotron，因此當你不知道下一步該怎麼做時不要感到氣餒。
+極其重要的注意事項: 我們稱這些區塊為 challenges 正是因為它們極具挑戰性！ 透過協作, 此課程將會非常有趣 - 與你的老師、助教、同學討論吧！ 此課程的風格會非常不同於 Suggestotron，因此當你不知道下一步該怎麼做時請不要感到氣餒。
 
 ## 如何使用此課程
-* Challenges 為大量得在給定時間做的事情。 需求為門檻 — 當你（或你的團隊）完成一組需求時，就往下完成下一個需求。
+* Challenges 為一連串在給定時間內需要完成的事項。 當你（或你的團隊）完成一組需求時，就往下完成下一組需求。
 * Requirements in this curriculum are not entirely divorced from what a requirement is in the agile software development methodology — things that should be in the application as defined by whoever is designing/deciding things about the product. Except here, we’ve also thrown in some non-application requirements, like the ability to explain a concept to a peer.
 * Discussions are led by the teacher; this is the closest this curriculum gets to lecture-y teaching.
-* Hints are what they sound like, as are Tools & References.
+* 把提示當成工具 & 參考.
 
-* Teachers only!: there's a teaching guide at http://bit.ly/int-railsbridge-guide
+* 這裡有給予教師的教學指引： http://bit.ly/int-railsbridge-guide
 MARKDOWN
 
 next_step "create_a_new_rails_app_with_a_static_home_page"
