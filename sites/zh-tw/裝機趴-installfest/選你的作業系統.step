@@ -1,7 +1,7 @@
 h2 "你用哪個 OS？"
 
 div(class: "os-button") do
-  simple_link "macintosh" do
+  simple_link "蘋果電腦" do
     img src: "/img/macface.jpg"
     h3 "蘋果電腦"
   end

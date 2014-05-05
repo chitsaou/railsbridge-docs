@@ -7,7 +7,7 @@ step "打開終端機（Terminal）" do
 end
 
 step "安裝編譯器（Xcode 或 GCC）" do
-  link "install_xcode"
+  link "安裝_xcode"
 end
 
 step "安裝 Homebrew" do
@@ -68,4 +68,4 @@ verify "安裝沒問題" do
   fuzzy_result "/Users/alex/.rvm/gems/ruby-{FUZZY}2.0.0-p247{/FUZZY}/bin/rails"
 end
 
-next_step "configure_git"
+next_step "設定_git"

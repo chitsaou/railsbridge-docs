@@ -97,7 +97,7 @@ step "設定 Windows 終端機" do
   message "花點時間來設定 *Command Prompt with Ruby and Rails*，把尺寸和字型調整好。
   講個秘訣──設定方式寫在下面這個連結裡面，按一下可以看設定方式，設定完成之後，按瀏覽器的**上一頁**按鈕可以回到這裡來。"
 
-  link "configure_the_windows_terminal"
+  link "設定_windows_終端機"
 
   tip "淨空終端機" do
     message "你如果想要淨空終端機畫面的話，請隨時輸入指令："
@@ -128,6 +128,6 @@ step "安裝文字編輯器" do
   message "請到這裡下載 Sublime Text 2：<http://www.sublimetext.com/2>"
 end
 
-next_step "configure_git"
+next_step "設定_git"
 
 

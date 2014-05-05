@@ -4,7 +4,7 @@ message "你需要用以下其中一個方式來開你的 Heroku 和 GitHub 帳�
 
 option "你用的是 Windows 的 RailsInstaller 嗎？" do
   message "賀！你已經有 SSH Key 了！"
-  link_without_toc 'create_a_heroku_account'
+  link_without_toc '開新_heroku_帳號'
 end
 
 option "你已經有一個用在其他用途的 SSH key 了嗎？" do
@@ -15,7 +15,7 @@ option "你已經有一個用在其他用途的 SSH key 了嗎？" do
     message "來這裡：<a href='#generate-key'>生一個 SSH key"
   end
   option_half "'/Users/[something]/.ssh/id_rsa'" do
-    link_without_toc 'create_a_heroku_account'
+    link_without_toc '開新_heroku_帳號'
   end
 end
 
@@ -75,5 +75,5 @@ The key fingerprint is:
     OUTPUT
 end
 
-next_step 'create_a_heroku_account'
+next_step '開新_heroku_帳號'
 

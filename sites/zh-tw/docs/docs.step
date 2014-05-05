@@ -6,7 +6,7 @@ MARKDOWN
 
 h1 '安裝'
 
-site_desc 'installfest', <<-MARKDOWN
+site_desc '裝機趴-installfest', <<-MARKDOWN
 指導你在電腦上安裝 Ruby on Rails。必須先做完這個才能去 Rails 的工作坊！
 MARKDOWN
 

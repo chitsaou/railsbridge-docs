@@ -100,4 +100,4 @@ step "Install Textmate" do
   insert "install_textmate"
 end
 
-next_step "create_an_ssh_key"
+next_step "製作_ssh_key"

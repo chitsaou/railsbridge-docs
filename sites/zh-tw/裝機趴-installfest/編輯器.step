@@ -23,4 +23,4 @@ end
 
 message "有些程式設計師會用 Command Line 文字編輯器，像是 `emacs` 或 `vim`。它們的學習曲線很陡，所以我們建議你用上面列出的圖形界面編輯器。"
 
-next_step "installfest"
+next_step "裝機趴-installfest"

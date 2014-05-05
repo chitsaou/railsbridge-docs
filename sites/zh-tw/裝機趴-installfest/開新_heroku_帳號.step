@@ -33,4 +33,4 @@ step "把你的 SSH key 加到 Heroku 帳號" do
   message "按 enter 來使用預設的 key。"
 end
 
-next_step "create_a_rails_app"
+next_step "開新_rails_應用程式"

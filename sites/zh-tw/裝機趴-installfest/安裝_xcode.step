@@ -1,11 +1,11 @@
 message "安裝 Xcode 很簡單，但有一個地方要注意，當它問你要安裝什麼 components 的時候，請確定有選 \"Unix Tools\"。此外就一直下一步、下一步、完成。"
 
 option "從 App Store 安裝 Xcode（適用 OSX 10.7 Lion 以上）" do
-  link "install_xcode_from_app_store"
+  link "從_app_store_安裝_xcode"
 end
 
 option "從還原光碟或 USB 安裝 Xcode（適用 OSX 10.6 Snow Leopard）" do
-  link "install_xcode_from_dvd"
+  link "從_dvd_安裝_xcode"
 end
 
 option "安裝 Xcode 的 Command Line Tools" do

@@ -46,7 +46,7 @@ step "請讀以下摘要" do
 * Rails
 * Git
 * Heroku
-* Sublime Text 2（或[別的編輯器](editors)）
+* Sublime Text 2（或[別的編輯器](編輯器)）
 * 一堆有用的 "ruby gems" ，包括…
   * bundler
   * sqlite
@@ -55,9 +55,9 @@ step "請讀以下摘要" do
 
 如果你已經有 Heroku 帳號了，請確定你記得帳密。
 
-如果已經安裝過這些工具，而且有自信它們都會動，那麼請直接跳到 <a href="get_a_sticker">拿貼紙</a>。
+如果已經安裝過這些工具，而且有自信它們都會動，那麼請直接跳到 <a href="拿貼紙">拿貼紙</a>。
 
   MARKDOWN
 end
 
-next_step "choose_your_operating_system"
+next_step "選你的作業系統"
