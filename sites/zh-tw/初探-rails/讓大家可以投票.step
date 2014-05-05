@@ -82,4 +82,4 @@ steps {
 
 insert 'consider_deploying'
 
-next_step "redirect_to_the_topics_list_after_creating_a_new_topic"
+next_step "新增_topic_之後轉回_topics_列表"

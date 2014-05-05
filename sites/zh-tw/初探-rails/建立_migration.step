@@ -20,8 +20,8 @@ steps {
 * `description:text` 是說 topics 有內文（description），它是一段文字（Text）。（「字串」跟「文字」的差別？基本上「文字」是用來儲存可能會很長的字串。）
 
     MARKDOWN
-    message "你若有興趣，可以花一點時間研究一下自動產生出來的檔案。你可以在[Rails Architecture](rails_architecture)這一頁學到更多。"
-    link "rails_architecture"
+    message "你若有興趣，可以花一點時間研究一下自動產生出來的檔案。你可以在[Rails 架構](rails_架構)這一頁學到更多。"
+    link "rails_架構"
   }
 
   step {
@@ -44,4 +44,4 @@ explanation {
 }
 
 
-next_step "CRUD_with_scaffolding"
+next_step "CRUD_和_scaffolding"

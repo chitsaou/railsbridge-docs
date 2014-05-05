@@ -29,4 +29,4 @@ explanation do
   message "Ctrl+C 是一個把終端機處理程序關掉或取消掉的方法。因為 Rails server 會永久執行不停歇，你得要自己用 Ctrl+C 來中斷它。"
 end
 
-next_step "creating_a_migration"
+next_step "建立_migration"

@@ -54,4 +54,4 @@ explanation do
   MARKDOWN
 end
 
-next_step "running_your_application_locally"
+next_step "在本機執行你的程式"

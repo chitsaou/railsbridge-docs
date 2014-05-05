@@ -95,4 +95,4 @@ steps do
   message "`rails new` 還建立了其他很多東西。大概可以寫一本書來講，所以我們現在先無視它們。"
 end
 
-next_step "add_the_project_to_a_git_repo"
+next_step "把專案加進_git_repo"

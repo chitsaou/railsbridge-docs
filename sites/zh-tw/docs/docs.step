@@ -12,7 +12,7 @@ MARKDOWN
 
 h1 'Rails'
 
-site_desc 'intro-to-rails', <<-MARKDOWN
+site_desc '初探-rails', <<-MARKDOWN
 傳統的 RailsBridge 課程（稱為 Suggestotron）。帶你一步一步蓋一個 Rails 應用程式、執行一條條指令、使用像是 `rails generate scaffold` 之類的輔助工具。
 MARKDOWN
 
