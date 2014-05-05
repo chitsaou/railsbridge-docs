@@ -1,21 +1,21 @@
 requirements do
 message <<-MARKDOWN
-* You should have a new rails app with with a static home page that's under your control. Make sure the controller for this page is called **HomeController**.
-* You, the developer, should explain to a teacher, TA, or fellow student how Rails knows to render the home view.
+* 你應該要有一個全新的 rails app ，搭配一頁在你掌控之下的靜態 home page。 確認負責這一頁的 controller 是否稱作 **HomeController**.
+* 你，開發者， 應該跟老師、助教或同伴解釋 Rails 是如何知道該 render home view 的。
 MARKDOWN
   img class: 'noborder', src: 'img/static_home_page.png'
 end
 
 discussion do
 message <<-MARKDOWN
-* In order to have a static home page, you will need a route, a controller, a view. Discuss!
-  * Seriously. If you don't discuss this stuff, things will be SO much harder.
-* Generators! Rails has lots of them. Try exploring the output of `rails generate`.
-* We’re not using `rails generate scaffold` in this curriculum. Because you will generate all your Models, Views and Controllers yourself, this will force you, to do more understanding-building brain work. The teacher/TAs can perhaps comment on what they would do in the real world and their thoughts on the excellence of this choice for learning-purposes.
-* What do you need to add to your home controller (after you've made it) to have a static home page?  
-* How does the home/index.html.erb view file relate to the layouts/application.html.erb view file?
-* What’s the significance of yield in the application view?
-* What does the home controller do?
+* 為了要擁有一頁靜態 home page， 你需要一個 route、一個 controller、一個 view。討論吧！
+  * 請謹慎。 如果你沒有討論這些東西，事情會變得非常困難。 
+* Rails 有很多 Generators。 請嘗試探索看看 `rails generate` 的輸出。
+* 在此課程中，我們現在不會使用 `rails generate scaffold` 這個指令。 因為你將會自己 generate 所有你的 Models、Views 以及 Controllers，這樣會強制你更努力地進行「知識建築」工作。 老師/助教 或許會建議一些他們在真實世界做的事以及這個選擇對於學習上的優點，他們的想法是什麼。
+* 你需要新增什麼至 home controller (在你產生它之後) 才能擁有一頁靜態 home page?  
+* home/index.html.erb view 檔案如何與 layouts/application.html.erb view 檔案相關聯?
+* application view 裡面的欄位，意義是什麼?
+* home controller 做了什麼?
 MARKDOWN
 end
 
@@ -28,7 +28,7 @@ end
 
 hints do
 message <<-MARKDOWN
-* If you have no idea what to put in your home controller, maybe try looking back at a past-Railsbridge app? Or another rails app you have lying about? 
+* 如果你不知道要放置什麼到 home controller 裡面，或許可以嘗試看一下以前做的 Railsbridge app? 或是其他你撒謊的 rails app? 
 MARKDOWN
 end
 
