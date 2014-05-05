@@ -1,35 +1,35 @@
 message <<-MARKDOWN
-# Let's build a message board!
+# 讓我們來製作一個 message board 吧！
 
-## Assumptions made by this curriculum
-* You’ve gone through the standard RailsBridge installfest and have successfully completed the <a href="/installfest/get_a_sticker">Get a Sticker</a> step.
-* You’ve gone through the RailsBridge <a href="/intro-to-rails">Suggestotron curriculum</a> at least once before, or maybe a couple of times, or maybe you feel decently comfortable with Rails for some other reason.
-* You want to learn more Rails!!!
+## 此課程假設
+* 你已經通過基礎 RailsBridge 裝機趴（Installfest）且成功完成 <a href="/installfest/get_a_sticker">Get a Sticker</a> 步驟。 
+* 之前你已經通過 RailsBridge <a href="/intro-to-rails">Suggestotron curriculum</a> 至少一次或是好幾次, 亦或是或許你因為某些原因對於 Rails 感到非常地舒適自在。 
+* 你想要學習更多的 Rails！
 
-## Goals
-* Make a thing!
-* Understand what the models, views, and controllers of a Rails app do and how they work together.
-* Get more comfortable using error messages as guideposts and not as scary things.
+## 目標
+* 創造一個東西！
+* 瞭解在一個 RailsApp 中, Model, View, Controller 做了什麼事情, 以及他們如何一起運作
+* 更舒適地將錯誤訊息使用為指引，而非將之視為恐怖的東西。
 
-## What’s Going to Happen?
-* We’re going to build a message board system, where there are posts on the front page and you click through to see the original post plus discussion below.
+## 接下來將會發生什麼事情？ 
+* 我們將會製作一個 Message Board System, 會有一個前頁顯示文章, 透過點擊可以觀看原文及底下的討論串。
 
-* We’ve divided this into challenges:
-  * Challenge 1: create a new rails app with a static home page
-  * Challenge 2: install devise
-  * Challenge 3: make it pretty with bootstrap
-  * Challenge 4: add pages to create and look at individual posts
-  * Challenge 5: make a posts index page
-  * Challenge 6: add replying
-  * Challenge 7: inline replying on a post
-  * Challenge ∞: other features of your choice
+* 我們已經將它分割成底下幾個 challenges ：
+  * Challenge 1: 產生一個新 Rails App , 配上一頁靜態 Home Page
+  * Challenge 2: 安裝 devise
+  * Challenge 3: 透過 bootstrap 讓它變得更漂亮 
+  * Challenge 4: 新增讓你產生新文章以及觀看個別文章的頁面
+  * Challenge 5: 製作一個 posts index 頁面
+  * Challenge 6: 新增回覆功能
+  * Challenge 7: 直接回覆於一篇文章的某一行
+  * Challenge ∞: 其他任何你想要的 features
 
-* Each time you get your app into a functional state, before adding any more features, COMMIT TO GIT! The new features will probably break things, which is neat, but you’ll want to be able to roll back to a prior version if necessary.
+* 每次使你的 app 進入功能狀態時，在新增更多的 features 之前，COMMIT TO GIT！  新 features 可能會破壞原本整齊的東西, 如果需要, 你將會冀望能夠回覆至之前的版本。
 
-MAJORLY IMPORTANT NOTE: We called the sections challenges because they are challenging! This curriculum will be most fun as a collaboration — talk things through with your teacher, TAs, and other students. This is a very different style of curriculum than Suggestotron, so don’t be discouraged if you aren’t quite sure what to do next.
+極其重要的注意事項: 我們稱這些區塊為 challenges 正是因為它們極具挑戰性！ 透過協作, 此課程將會是最有趣的 - 與你的老師、助教、同學談論事情。 此課程的風格會非常不同於 Suggestotron，因此當你不知道下一步該怎麼做時不要感到氣餒。
 
-## How to use this curriculum
-* Challenges are the big chunks of stuff to work on at a given time. These are gated by requirements — once you (or your group) has completed a set of requirements, go on to the next set.
+## 如何使用此課程
+* Challenges 為大量得在給定時間做的事情。 需求為門檻 — 當你（或你的團隊）完成一組需求時，就往下完成下一個需求。
 * Requirements in this curriculum are not entirely divorced from what a requirement is in the agile software development methodology — things that should be in the application as defined by whoever is designing/deciding things about the product. Except here, we’ve also thrown in some non-application requirements, like the ability to explain a concept to a peer.
 * Discussions are led by the teacher; this is the closest this curriculum gets to lecture-y teaching.
 * Hints are what they sound like, as are Tools & References.
