@@ -9,7 +9,7 @@ message <<-MARKDOWN
 
 * 加一個「扣分」按鈕，做的事跟加分按鈕相反。
 * 根據投票分數排序 topics。
-* 加一個 'about' 頁面，從 topics 列表的最下面連過去。然後從 About 頁面連回 Topics 列表，這樣使用者才不會卡住。
+* 新增一個 'about' 頁面，並將連結放在 topics 列表的最下方。記得也要在 About 頁面上放置回 Topics 列表的連結，以免使用者迷路。
 * 如果你這次上課剩下**很多**時間，可以試試看：
   * 限制使用者只能投票一次：在投票記錄加一個 user_id 然後限制每個使用者對每一篇 topic 都只能投票一次。不過首先要定義什麼是「使用者（user）」。你可以請助教來跟大家講一下什麼是 [Devise](https://github.com/plataformatec/devise)，它可以很輕易就在 Rails 程式裡面加入使用者認證系統。
   * Users should be able to give a post a 'negative' vote instead of a positive one. How might you represent that in this system?
