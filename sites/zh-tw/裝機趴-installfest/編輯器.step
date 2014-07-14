@@ -9,6 +9,7 @@ message <<-MARKDOWN
 * <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a> 很受歡迎，而且有很多 Ruby 和 Rails 的使用者。你可以免費試用，之後必須付錢才能繼續用。
 * <a href="http://komodoide.com/download/" target="_blank">Komodo</a> 是很棒的程式用編輯器，但現在比較少用。相對而言比較易用。
 * <a href="http://macromates.com/" target="_blank">TextMate</a> 在 Ruby 和 Rails 社群很受歡迎。非免費。
+* <a href="https://atom.io/" target="_blank">Atom</a> 是免費、開放原始碼的編輯器，可以用 HTML、CSS、JavaScript 來客製化。有給 OS X 10.8+ 的安裝檔，其他作業系統要自己編譯。
 * <a href="http://aptana.com/products/studio3" target="_blank">Aptana Studio</a> 免費、全功能、專門給 Ruby 和 Rails 開發用的 IDE（Integrated Development Environment，整合式開發環境）。它有很多很威的功能來協助你寫程式。你可以單獨安裝 Aptana 或是裝成 <a href="https://www.eclipse.org/downloads/" target="_blank">Eclipse</a> 的 Plug-In。
 * <a href="http://www.jetbrains.com/ruby/" target="_blank">RubyMine</a> 很多公司會用來開發 Ruby 和 Rails 軟體。它也是全功能的 IDE，很像 Aptana。RubyMine 非免費，有 30 天試用期。
 

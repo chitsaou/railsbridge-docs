@@ -35,6 +35,7 @@ step "安裝事先包好的軟體和程式庫" do
     libxslt1-dev
     libyaml-dev
     ncurses-dev
+    nodejs
     openssl
     sqlite3
     zlib1g

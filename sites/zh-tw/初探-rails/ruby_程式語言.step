@@ -122,7 +122,7 @@ pluralize("kiwi")
 
     message "Method 會取 **parameters（參數）**，表示它們要對哪些變數操作。以此例而言，我們做了一個 method 叫做 pluralize ，它取一個參數 word，是一個單字。"
 
-    message "Method 也可以 return（回傳）資料。以此例而言，pluralize 會回傳 word 單字加上 's' 結尾。在 Ruby 裡面，function 會回傳最後一行的結果，無論該結果是什麼。"
+    message "Method 也可以 return（回傳）資料。以此例而言，pluralize 會回傳 word 單字加上 's' 結尾。在 Ruby 裡面，method 會回傳最後一行的結果，無論該結果是什麼。"
   end
 end
 

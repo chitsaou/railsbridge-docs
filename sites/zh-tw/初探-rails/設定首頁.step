@@ -66,7 +66,7 @@ explanation {
   <a href="http://localhost:3000/rails/info">http://localhost:3000/rails/info</a>
   你就會看到像這樣的東西：
 
-  <img src='img/rails4_rails_info_routing.png'>
+  <img src='img/rails4_rails_info_routing.png' alt='Screenshot of browser-based Rails routing info page'>
 
   如果你隨便開一個不存在的網址，也會看到這個畫面。（試試看 <a href="http://localhost:3000/sandwich">http://localhost:3000/sandwich</a>）
 

@@ -104,6 +104,8 @@ bundle install --without production
       root 'drinks#index'
     RUBY
 
+    message "存檔。"
+
     message "請注意你必須把行前的 '#' 刪掉，因為以 # 開頭的行都是註解，不會有任何效果。"
   end
 

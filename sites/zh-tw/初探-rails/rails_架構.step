@@ -48,4 +48,9 @@ explanation {
 
 Models、Views、Controllers 有各自的工作。像這樣把責任拆開來，會比較容易開發，尤其是它長得愈來愈大的時候。（每個檔案都有清晰的責任，會比較容易處理問題、增加新功能。）
   MARKDOWN
+
+  message <<-MARKDOWN
+  如果你想要學更多 Rails 架構的話，你可以看一下這個教學影片（三分半鐘）[MVC 架構 *YouTube*](https://www.youtube.com/watch?v=eTdVkgF_Slo)
+  MARKDOWN
+
 }

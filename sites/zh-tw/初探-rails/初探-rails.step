@@ -10,7 +10,7 @@ message <<-MARKDOWN
 
 貼張圖讓你看看它會長怎樣：
 
-![screenshot](img/finished_app.png)
+![Browser window with topic titles that can be voted on, ordered by number of votes](img/finished_app.png)
 
 ### 練功目標
 
@@ -36,7 +36,7 @@ day... unless I really screwed something up. :D
 我們會用這些來做：
 
 * ruby 1.9.3、2.0.0 或 2.1.0 用 RVM 安裝（Mac 或 Linux）或用 RailsInstaller 安裝（Mac 或 Windows）
-* rails 4.0.x
+* rails 4.1.x
 * bundler
 * sqlite
 * 你自己選的文字編輯器

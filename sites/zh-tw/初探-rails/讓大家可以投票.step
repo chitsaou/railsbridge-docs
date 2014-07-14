@@ -5,7 +5,7 @@ goals {
 steps {
 
   step "加一個新的 controller action 來投票加分" do
-    message "編輯 `app/controllers/topics_controller.rb` 加一個 method，像這樣："
+    message "編輯 `app/controllers/topics_controller.rb` 然後把以下這個 method 加在 controller 下方的 `private` keyword 之上："
 
     source_code :ruby, <<-RUBY
       def upvote
@@ -68,8 +68,8 @@ steps {
     message <<-MARKDOWN
       * `pluralize(topic.votes.count, "vote")` 會輸出票數，並且根據（英文的）單複數在後面加上 'vote' 或 'votes' 單字。
       * `button_to '+1'` 加一個 HTML 的按鈕（button），裡面有字 '+1'。
-      * `topic_upvote_path(topic)` 產生我們要呼叫的 action 的對應 URL。以此例而言，我們要對目前的 topic 投票加分。
-        * `topic_upvote_path(topic)` 會回傳 `/topics/42/upvote`（如果 topic.id 是 42）。
+      * `upvote_topic_path(topic)` 產生我們要呼叫的 action 的對應 URL。以此例而言，我們要對目前的 topic 投票加分。
+        * `upvote_topic_path(topic)` 會回傳 `/topics/42/upvote`（如果 topic.id 是 42）。
       * `method: :post` 確保我們使用了 CRUD 裡面的 create 操作，而非 read。
     MARKDOWN
   end

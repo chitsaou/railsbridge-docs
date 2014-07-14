@@ -1,4 +1,4 @@
-img src: "img/Start_page.png", alt: "Start Page"
+img src: "img/Start_page.png", alt: "Screenshot of a Ruby on Rails default home page"
 
 goals do
   goal "建立你的 New Application"
@@ -53,11 +53,11 @@ steps do
 
 在 **Sublime Text 2** 裡面，你可以選擇 `Project > Add Folder to Project...`。
 
-<img src='img/sublime_add_folder_to_project.png' />
+![Sublime Text Project menu screenshot](img/sublime_add_folder_to_project.png)
 
-然後在檔案對話方塊裡面選擇 `suggestotron` 資料夾。如果一切沒問題的話，Sublime 會變得像這樣：
+然後在檔案對話方塊裡面選擇 `suggestotron` 資料夾。如果一切沒問題的話，Sublime 會在視窗左邊以樹狀結構列出資料夾的內容：
 
-<img src='img/sublime_project_as_folder.png' />
+![Screenshot of Suggestotron project folder tree in Sublime Text](img/sublime_project_as_folder.png)
     MARKDOWN
   end
 

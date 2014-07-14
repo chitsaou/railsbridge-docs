@@ -97,7 +97,7 @@ explanation do
   MARKDOWN
 
   message "你可以在任何你的程式沒問題、會動的時候 deploy。標準流程長得像這樣："
-  img src: "img/workflow.png", alt: "workflow", style: "border: none"
+  img src: "img/workflow.png", alt: "Diagram showing git workflow of making changes, committing them, and pushing to Heroku.", style: "border: none"
   ol do
     li { message "改程式" }
     li { message "把異動 commit 進 git（`git commit`）" }

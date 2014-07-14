@@ -22,7 +22,7 @@ step "讓助教檢查你的工具的版本" do
     fuzzy_result "Bundler version 1{FUZZY}.x.x{/FUZZY}"
 
     console "rails -v"
-    fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
+    fuzzy_result "Rails 4.{FUZZY}1.x{/FUZZY}"
 
     tip 'RailsBridge 課程是寫給 Rails 4 的，如果你還用 Rails 3.x 的話，你要升級到 Rails 4，用 `gem install rails`。'
   end

@@ -21,19 +21,19 @@ steps {
 
   step {
     message "在瀏覽器打開 [http://localhost:3000/topics](http://localhost:3000/topics)"
-    message "你應該會看到一個頁面，列出所有 topics ，長得像這樣："
+    message "你應該會看到一個「Listing Topics」的頁面，有個空白但有 Title 和 Description 欄位標題的表格，還有一個連結可以新增 Topic："
 
-    img src: "img/Seattle_topic_list_page.png", alt: "Topic List Page"
+    img src: "img/Seattle_topic_list_page.png", alt: "Screenshot of topic list page"
   }
 
   step {
     message <<-MARKDOWN
   * 按一下 "New Topic"
   * 填寫表單，然後按一下 "Create Topic"
-  * 你應該會看到一個確認頁，像這樣：
+  * 你應該會看到一個網頁，裡面顯示你新建立的 topic，並且說你已經成功建立你的 topic 了：
     MARKDOWN
 
-    img alt: "topic created", src: "img/Seattle_topic_created.png"
+    img alt: "Screenshot of topic detail page with confirmation message", src: "img/Seattle_topic_created.png"
   }
 
   step {
@@ -41,7 +41,7 @@ steps {
       * 按一下 "back"
       * 你應該會再看到 topics 列表，這次還有你剛剛新增的 topic：
 
-      ![list with topic](img/Seattle_list_with_topic.png)
+      ![Screenshot of topic list with new topic](img/Seattle_list_with_topic.png)
 
       * 試試看 'show'、'edit'、'destroy' 連結看看會發生什麼事。
       * 賀！你已經建立了一個基本的資料庫網站了！
