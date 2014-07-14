@@ -13,11 +13,15 @@ MARKDOWN
 h1 'Rails'
 
 site_desc '初探-rails', <<-MARKDOWN
-傳統的 RailsBridge 課程（稱為 Suggestotron）。帶你一步一步蓋一個 Rails 應用程式、執行一條條指令、使用像是 `rails generate scaffold` 之類的輔助工具。
+傳統的 RailsBridge 課程（稱為 Suggestotron）。帶你一步一步蓋一個 Rails 應用程式、執行一條條指令、使用像是 `rails generate scaffold` 之類的輔助工具，並且部署（deploy）到網路上。
+MARKDOWN
+
+site_desc 'job-board', <<-MARKDOWN
+從頭做一個簡單的求職看板，會少用一些 Rails scaffold 的密技。本課程適合第二次或第三次來 RailsBridge 的、或是更想要更瞭解這個應用程式如何結合在一起的。（本課程不含部署上網）
 MARKDOWN
 
 site_desc 'intermediate-rails', <<-MARKDOWN
-給已經練過 Suggestotron 的同學們的課程。這次不會開「簡單模式」──課程裡面不會告訴你要打什麼字！
+給已經練過 Suggestotron 和 Job Board 的同學們的課程。這次不會開「簡單模式」──課程裡面不會告訴你要打什麼字！
 MARKDOWN
 
 h1 '前端（Frontend）'
