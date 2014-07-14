@@ -1,4 +1,4 @@
-# The Railsbridge Documentation Project
+# The RailsBridge Documentation Project
 
 [![Build Status](https://travis-ci.org/railsbridge/docs.png)](https://travis-ci.org/railsbridge/docs)
 
@@ -40,7 +40,7 @@ To server sites from another locale (say, "es" or Spanish)...
 
 The server listens on `0.0.0.0:9292`.
 
-Now you have to setup subdomain for the site. If you have Pow, run:
+Now you have to set up subdomain mappings for the site. If you have Pow, run:
 
     $ echo 9292 > ~/.pow/railsbridge # works for any subdomain
 
@@ -72,6 +72,6 @@ The code is licensed under an [MIT license](http://opensource.org/licenses/MIT),
 
 ## Other Resources
 
-- Workship Organizers see [WORKSHOP.md](WORKSHOP.md)
 - [StepFile Reference](step_file_reference.md)
+- Workshop organizers: See http://docs.railsbridge.org/workshop for example slide decks you can use in your opening/closing presentations.
 

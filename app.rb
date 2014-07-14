@@ -25,11 +25,11 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   include Erector::Mixin
 
   # Set available locales in Array of Strings; this is also used when
-  # checking availability in dynamic locale assigment, so must be as Strings.
+  # checking availability in dynamic locale assignment, they must be strings.
   AVAILABLE_LOCALES = %w(en es zh-tw)
 
   configure do
-    I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
+    I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
     I18n.load_path = Dir[File.join(settings.root, 'locales', '*.yml')]
     I18n.backend.load_translations
 
@@ -102,13 +102,13 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   end
 
   def ext
-    ext = $1 if doc_path.match(/\.(.*)/)
+    $1 if doc_path.match(/\.(.*)/)
   end
 
   def doc_path
     @doc_path ||= begin
       base = "#{site_dir}/#{params[:name]}"
-      %w{step md deck.md mw}.each do |ext|
+      Site::DOC_TYPES.each do |ext|
         path = "#{base}.#{ext}"
         return path if File.exist?(path)
       end
@@ -199,10 +199,9 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     end
   end
 
-  # todo: make this work in a general way, without hardcoded 'img'
-  get "/:site/img/:name.:ext" do
+  get "/:site/:subdir/:name.:ext" do
     if sites.include?(params[:site])
-      send_file "#{site_dir}/img/#{params[:name]}.#{params[:ext]}"
+      send_file "#{site_dir}/#{params[:subdir]}/#{params[:name]}.#{params[:ext]}"
     end
   end
 
@@ -222,7 +221,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   get "/:site/:name/:section/" do
     # remove any extraneous slash from otherwise well-formed page URLs
-    redirect "#{params[:site]}/#{params[:name]}/#{params[:section]}"
+    redirect request.fullpath.chomp('/')
   end
 
   get "/:site/:name/:section" do

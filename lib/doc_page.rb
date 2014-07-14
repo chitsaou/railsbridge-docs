@@ -121,10 +121,17 @@ class DocPage < Html5Page
         doc_content
       }
       if @back
+        # Encode page name and fragment name separately so that
+        # the fragment indicator '#' won't be escaped.
+        page_name, fragment = @back.split('#')
+        url_components = [URI.escape(page_name, URI::PATTERN::RESERVED)]
+        url_components << URI.escape(fragment, URI::PATTERN::RESERVED) if fragment
+        back_url = url_components.join('#')
+
         div.back {
           text I18n.t("general.back_to") + " "
-          a(class: "back", href: URI.escape(@back)) do
-            text Titleizer.title_for_page(@back.split('#').first)
+          a(class: "back", href: back_url) do
+            text Titleizer.title_for_page(page_name)
           end
         }
       end

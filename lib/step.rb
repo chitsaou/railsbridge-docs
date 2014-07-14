@@ -107,7 +107,7 @@ class Step < Erector::Widget
   end
 
   def _escaped str
-    URI.escape(str)
+    URI.escape(str, URI::PATTERN::RESERVED)
   end
 
   def simple_link name, options={}
@@ -232,6 +232,21 @@ class Step < Erector::Widget
     message text, class: "tip vertical-centerer", inner_class: "vertically-centered", icon: "info-circle", &block
   end
 
+  def discussion_box(title, content)
+    div class: "discussion_box" do
+      h4 "Discussion: #{title}"
+      hr
+      message content
+    end
+  end
+
+  def error_box(error)
+    div class: "error_box" do
+      h4 "Error! Woo!!!"
+      p error
+    end
+  end
+
   ## special
 
   def console(commands)
@@ -247,6 +262,11 @@ class Step < Erector::Widget
 
   def console_without_message(commands)
     console_with_message("", commands)
+  end
+
+  def source_code_with_message(text, *args)
+    message text
+    source_code(*args)
   end
 
   def irb msg
@@ -285,7 +305,7 @@ class Step < Erector::Widget
       span I18n.t("captions.fuzzy_result")
       remaining_text = fuzzed_text
       pre do
-        while match = remaining_text.match(/(.*?){FUZZY}(.*?){\/FUZZY}(.*)/m)
+        while match = remaining_text.match(/(.*?)\{FUZZY}(.*?)\{\/FUZZY}(.*)/m)
           text match[1]
           span match[2], :class => 'fuzzy-lightened'
           remaining_text = match[3]
