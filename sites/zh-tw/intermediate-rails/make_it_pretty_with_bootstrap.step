@@ -7,8 +7,8 @@ MARKDOWN
 end
 
 important do
-  h2 "Timebox It!"
-  p "The purpose of this section is to make your app a bit prettier and demonstrate how to add CSS frameworks like Bootstrap using the Gemfile. Don't get snagged on the details of getting your CSS exactly right, unless that's valuable to you."
+  h2 "限時挑戰"
+  p "這個章節最主要的目的是讓你的應用程式更漂亮一點點，並且展示如何透過 Gemfile 添加像是 Bootstrap 這樣的 CSS Framework 到你的應用程式中。別為了讓 CSS 正確而陷入僵局，除非對你來說這是真的有價值的。"
 end
 
 discussion do
