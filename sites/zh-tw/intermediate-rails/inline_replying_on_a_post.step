@@ -1,15 +1,15 @@
 requirements do
 message <<-MARKDOWN
-* The user should see the 'New Reply' form at the bottom of a Post's show page.
-* The user should be able to make replies using the inlined 'New Reply' form.
-* Error handling (trying to reply without any content) should still work the same way as when replying was a separate page.
+* 使用者必須在文章的顯示頁面的底部看到「新增回應」的表單。
+* 使用者應該可以透過文內表單直接建立回應。
+* 錯誤處理（試著不輸入任何內容就直接回應）應該也要用與單獨回應的頁面同樣的方式來運作。
 MARKDOWN
 img class: 'noborder', src: 'img/inline_reply.png'
 end
 
 discussion do
 message <<-MARKDOWN
-* What needs to happen in the posts controller to allow inline replying? What needs to happen in the view?
+* 在 posts controller 中要做什麼事才能允許文內回應呢？在 view 裡面又要做什麼事呢？
 MARKDOWN
 end
 
