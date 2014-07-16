@@ -16,10 +16,10 @@ end
 discussion do
 message <<-MARKDOWN
 * Devise 是什麼？
-* Devise 會加入哪些檔案到你的 Rails 應用程式裡？
+* Devise 會新增哪些檔案到你的 Rails 應用程式裡？
 * 有誰知道：解釋如何閱讀指令 `rake routes` 輸出的結果。輸出內容是什麼？這些輸出結果有幫助嗎？
-* 你會如何添加登出按鈕呢？語法中 DELETE 是什麼意思？
-* 準備在你的 application 樣板中添加錯誤訊息顯示。如果你還沒有準備好，討論一下 application 樣板與其他你建立的 view 檔案之間的關係。
+* 你會如何新增登出按鈕呢？語法中 DELETE 是什麼意思？
+* 準備在你的 application 樣板中新增錯誤訊息顯示。如果你還沒有準備好，討論一下 application 樣板與其他你建立的 view 檔案之間的關係。
 MARKDOWN
 end
 
