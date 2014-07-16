@@ -1,79 +1,79 @@
 ## Ruby
 
-Open an interactive Ruby terminal (type 'exit' to quit)
+開啟 Ruby 互動式終端界面 （輸入 'exit' 可以結束）
 
     irb
 
-Run a ruby program named FILENAME.rb
+讓 ruby 執行一個名稱為 FILENAME.rb 的檔案
 
     ruby FILENAME.rb
 
-Installs a gem called GEMNAME
+安裝一個叫做 GEMNAME 的 gem
 
     gem install GEMNAME
 
-Installs gems listed in the `Gemfile`
+安裝被寫在 `Gemfile` 內的 gems
 
     bundle install
 
 ## Rails
 
-Create a new rails project called `NAME`
+建立一個叫做 `NAME` 的新的 Rails 專案
 
     rails new NAME
     
-Auto-generate routes (this can also be done manually)
+自動建立路由 （這個部分也可以手動建立）
 
     rails generate scaffold
 
-Create a new [Rails model]
+建立一個新的 [Rails model]
 
     rails generate model MODELNAME
 
-Update the database to match what you have described in your code
+更新資料庫內容來符合你在程式碼中所定義的結構
 
     rake db:migrate
 
-Run the application locally (Ctrl-C to quit)
+在本地端執行 Rails 應用程式 （Ctrl-C 可以結束）
 
     rails server
 
-Start an interactive Ruby session that knows about your Rails models (type 'exit' to quit)
+啟動互動式 Ruby 終端界面來控制、了解你的 Rails models （輸入 'exit' 可以結束）
 
     rails console
 
-Print the routes for your application
+印出你的 Rails 應用程式的所有路由
 
     rake routes
 
 ## Browser
 
-Go to the root page of your rails application
+到你 Rails 應用程式的首頁
 
     http://localhost:3000
 
 ## Git
 
-Creates a new git repository in your current directory.
+在你當前的目錄中建立一個新的 git 庫
 
     git init
 
-Add the current directory, and all sub directories, to your git repository.
+將當前目錄以及所有子目錄的資料交給 git 追蹤
 
     git add .
 
-Tells you what you've added, deleted, and changed between your current directory and you local git repository.
+告訴你你新增了、刪除了、改變了哪些檔案、記錄。
 
     git status
 
-Prints the difference between FILENAME and what is in your local git repository.
+印出 FILENAME 這檔案的修改內容的差異比對
 
     git diff FILENAME
 
-Commit the files you've added to the local repository.
+提交你追蹤的檔案到本地端的庫
 
     git commit -m "Describe what has changed, and why" .
 
-Push *committed* changes to the remote server.
+向伺服器推送已經提交過的更新內容
 
     git push

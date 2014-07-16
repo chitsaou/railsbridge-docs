@@ -1,12 +1,11 @@
-### How does typing in a URL result in a web page being rendered? Here's a rough overview.
+### 當輸入網址後網頁會是怎樣顯示的呢？這裡是一個概括的總覽。
 
 <img src="img/request-cycle.jpg" height="600px">
 
-1. The user types in a URL, hoping for a cool website.
-1. After the DNS gets resolved (a topic for another day), the request hits a web server, which asks Rails what it's got.
-1. Rails goes to the routes file first, which takes the URL and calls a corresponding controller action.
-1. The controller goes and gets whatever stuff it needs from the database using the relevant model.
-1. With the data the controller got from the model, it uses the view to make some HTML.
-1. Rails packages up the response and gives it to the web server.
-1. The web server delivers the response to the browser to display a cool website to the user.
-
+1. 使用者輸入一個網址，希望是一個很酷的網站。
+1. DNS 會解析這個網址（以後會另闢新文講解這件事），然後要求被丟到網站伺服器去並且跟 Rails 說它得到了什麼東西。
+1. Rails 開始進入路由檔案，並且找到跟網址相對應的 controller 以及 action 。
+1. controller 會開始處理，並且透過相關的 model 從資料庫中撈取需要的資訊。
+1. controller 從 model 拉回來的資料會透過 view 來建立一些 HTML 。
+1. Rails 將這些資料打包起來後回應給網站伺服器。
+1. 網站伺服器將回應送回到瀏覽器上，顯示出一個很酷的網站給使用者。
