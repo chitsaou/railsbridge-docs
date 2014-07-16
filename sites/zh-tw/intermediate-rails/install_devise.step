@@ -9,8 +9,8 @@ MARKDOWN
 end
 
 important do
-  h2 "Timebox it!"
-  p "The purpose of this section is to allow users to log in to your app and demonstrate how to add external libraries like Devise using the Gemfile. If you find yourself needing to write more than a couple of lines of code to make that happen, you may have gone too far. Talk to a TA!"
+  h2 "限時挑戰"
+  p "這個章節最主要的目的是允許使用者登入你的應用程式並且展示如何透過 Gemfile 添加像是 Devise 這種額外的函式庫到你的應用程式中。。如果你發現你需要寫超過兩行以上的程式碼才可以做到的話也許你需要跟助教聊聊。"
 end
 
 discussion do
