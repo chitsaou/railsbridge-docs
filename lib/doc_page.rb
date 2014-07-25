@@ -64,11 +64,12 @@ class DocPage < Html5Page
   end
 
   def git_url
-    "https://github.com/railsbridge/docs/blob/master/sites/#{@locale}/#{@site_name}/#{file_name}"
+    "https://github.com/rails-taiwan/railsbridge-docs/blob/zh-tw/sites/#{@locale}/#{@site_name}/#{file_name}"
   end
 
   def src_url
-    "#{file_name.split('.').first}/src"
+    "https://raw.githubusercontent.com/rails-taiwan/railsbridge-docs/zh-tw/sites/#{@locale}/#{@site_name}/#{file_name}"
+    # "#{file_name.split('.').first}/src"
   end
 
   def top_links

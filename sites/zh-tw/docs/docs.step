@@ -1,5 +1,5 @@
 message <<MARKDOWN
-本站由 RailsBridge 志工維護。如果有需要改善的地方，請上 GitHub 發 [pull request](https://github.com/railsbridge/docs) 或[告訴我們](https://github.com/railsbridge/docs/issues/new)（不需要技術知識）。
+本站由 RailsBridge 志工維護。如果有需要改善的地方，請上 GitHub 發 [pull request](https://github.com/rails-taiwan/railsbridge-docs) 或[告訴我們](https://github.com/rails-taiwan/railsbridge-docs/issues/new)（不需要技術知識）。
 
 中文版註：翻譯改善建議等，請至 [chitsaou/railsbridge-docs](https://github.com/chitsaou/railsbridge-docs) 。
 MARKDOWN
@@ -66,9 +66,9 @@ message <<MARKDOWN
 
 ### 我想幫忙，怎麼開始？
 
-首先，[開 GitHub 帳號](https://github.com/)。然後[開票](https://github.com/railsbridge/docs/issues)寫下你的想法。我們會幫你實現之（只要它符合我們的理想 :D）。
+首先，[開 GitHub 帳號](https://github.com/)。然後[開票](https://github.com/rails-taiwan/railsbridge-docs/issues/new)寫下你的想法。我們會幫你實現之（只要它符合我們的理想 :D）。
 
-不知道自己能做什麼呢？去爬一下[票單](https://github.com/railsbridge/docs/issues)和[待辦事項](https://github.com/railsbridge/docs/wiki/RailsBridge-To-Do-List)。裡面有很多想法。
+不知道自己能做什麼呢？去爬一下[票單](https://github.com/rails-taiwan/railsbridge-docs/issues)和[待辦事項](https://github.com/railsbridge/docs/wiki/RailsBridge-To-Do-List)。裡面有很多想法。
 
 
 ### 我有對 RailsBridge 的問題。
