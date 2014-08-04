@@ -5,11 +5,11 @@ message <<-MARKDOWN
 
 * 使用者的個人檔案頁面（輸入使用者的名字或其他資訊，可以顯示在文章的側邊）。
 * 顯示使用者的文章 / 回應的歷史記錄（或許在他們的個人檔案頁面上顯示？）。
-* 可以用 [Gravatar](https://gravatar.com/) 來簡單的顯示使用者的大頭照。
-* 透過 [Omniauth](https://github.com/intridea/omniauth) 增加其他的登入選項，包含了 Twitter, Facebook, GitHub, Google 以及更多。
-  * 順便讀一下 Devise 的這份文件，關於 [整合 Omniauth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview) 的。
-* 亂搞一下顯示頁面的 Layout 讓它看起來很棒。
-* 也許可以把 Markdown 或其他類似的東西整合進來。
+* 用 [Gravatar](https://gravatar.com/) 輕輕鬆鬆就顯示使用者的大頭照。
+* 用 [Omniauth](https://github.com/intridea/omniauth) 來增加其他的登入選項，像 Twitter, Facebook, GitHub, Google 等等。
+  * 順便讀一下 Devise [整合 Omniauth 的文件](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview) 。
+* 如果文章內容頁看起來不漂亮的話，隨意調一下它的排版來美化它。不過或許已經很漂亮了也說不定。
+* 也許可以把 Markdown 或其他類似的潮物整合進來。
 * 部署到 Heroku 並且把你的留言板網址給你的朋友們！
 
 ## ... 那就先這樣了，祝你好運！做出更多更棒的東西吧！下次見！

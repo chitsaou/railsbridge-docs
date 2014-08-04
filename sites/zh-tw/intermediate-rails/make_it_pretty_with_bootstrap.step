@@ -1,6 +1,6 @@
 requirements do
   message <<-MARKDOWN
-* 這個網站必須用 Bootstrap 搞出一個超時髦的外觀。
+* 這個網站要用 Bootstrap 搞出一個潮潮的外觀。
 * 登入之後，使用者的 E-mail 必須顯示在導覽列的右上角。
 MARKDOWN
   img class: 'noborder', src: 'img/header.png'
@@ -14,9 +14,9 @@ end
 discussion do
 message <<-MARKDOWN
 * Chrome 開發者工具 / Firefox Firebug 外掛 - 如何使用它們？
-* 什麼是 Bootstrap (後面不一定要解答) 為什麼大多數人都喜歡用它？ (或者絕大多數的部分都會採用它)
-* 也許可以重審一下 home/index.html.erb 檔案與 layouts/application.html.erb 之間的關係，並且你也許會想編輯一些東西來感受到 Bootstrap 的優點。
-* 某人應該解釋 erb 是怎樣運作的，你會使用它來在網頁的右邊顯示已登入使用者的 E-mail 。
+* Bootstrap 是什麼？為什麼大多數人都喜歡用它？（此題可跳過，或至少討論為什麼到處都有人用。）
+* 也許可以重審一下 home/index.html.erb 檔案與 layouts/application.html.erb 之間的關係，你或許會想要四處改改來好好利用 Bootstrap 。
+* 找個誰來解釋一下 erb 是怎樣運作的，你會使用它來在網頁的右邊顯示已登入使用者的 E-mail 。
 MARKDOWN
 end
 
@@ -31,14 +31,14 @@ end
 
 hints do
 message <<-MARKDOWN
-* 別忘記閱讀讀我檔！
-* Bootstrap 提供兩種方式移動文字的位置，看一下 "Component alignment" 這個部分的說明吧。
+* 別忘記閱讀 Readme 檔！
+* Bootstrap 提供幾種方式來移動文字的位置，找一下 "Component alignment" 這個部分的說明吧。
 * Devise 有一個 helper 函式可以取得當前登入的使用者，回去看一下 devise 的文件吧。
 MARKDOWN
 end
 
 h1 "真的超有用的提示"
-message "如果你不能感受到 Bootstrap 導覽列的 HTML 的魅力，或者想要快一點到下一個單元，這裡有一些程式碼可以給你扔進去到你的 layout 裏面 (在安裝 Bootstrap 之後！)，應該是可以運作的。這些 HTML 應該會是在你的 &lt;body&gt; 標籤之後。"
+message "如果你不能感受到 Bootstrap 導覽列的 HTML 的魅力，或者想要快一點到下一個單元，這裡有一些程式碼可以給你扔進去到你的 layout 裏面 (在安裝 Bootstrap 之後！)，應該是可以運作的。這些 HTML 要放在你的 &lt;body&gt; 標籤之後。"
 pre <<-MARKDOWN
 <div class="navbar navbar-default">
   <div class="container">
@@ -53,6 +53,6 @@ pre <<-MARKDOWN
 </div>
 MARKDOWN
 
-message "***你依舊需要增加顯示成功登入的使用者以及登出的按鈕的 HTML 碼。***"
+message "***你還是得要加上顯示成功登入的使用者以及登出的按鈕的 HTML 碼。***"
 
 next_step "add_pages_to_create_and_look_at_individual_posts"

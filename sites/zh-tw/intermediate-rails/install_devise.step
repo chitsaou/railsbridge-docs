@@ -1,10 +1,10 @@
 requirements do
 message <<-MARKDOWN
 * 使用者要可以註冊一個帳號並且可以登入。
-* 使用者需要在他們沒有登入的時候看到一個提示。
-* 登入之後，使用者應該要看到一個有招呼語的頁面。
-* 頁面上面需要顯示當前登入的使用者的 E-mail 以及一個登出的超連結。
-* 你，開發者，應該向老師、助教或者同學解釋 Rails 是如何呈現這個 home 頁面。
+* 使用者要在沒有登入的時候要看到一個提示。
+* 登入之後，使用者應該要看到一個有歡迎詞的頁面。
+* 頁面上面需要顯示當前登入的使用者的 E-mail 以及登出的連結。
+* 你，開發者，要向老師、助教或者同學解釋 Rails 是如何呈現這個 home 頁面。
 MARKDOWN
 end
 
@@ -17,29 +17,29 @@ discussion do
 message <<-MARKDOWN
 * Devise 是什麼？
 * Devise 會新增哪些檔案到你的 Rails 應用程式裡？
-* 有誰知道：解釋如何閱讀指令 `rake routes` 輸出的結果。輸出內容是什麼？這些輸出結果有幫助嗎？
+* 懂的來說一下：解釋如何閱讀指令 `rake routes` 輸出的結果。輸出內容是什麼？這些輸出結果怎麼個有用法？
 * 你會如何新增登出按鈕呢？語法中 DELETE 是什麼意思？
-* 準備在你的 application 樣板中新增錯誤訊息顯示。如果你還沒有準備好，討論一下 application 樣板與其他你建立的 view 檔案之間的關係。
+* 你會為了加上錯誤訊息而去改到 application 的排版。如果你還沒改到的話，討論一下 application 樣板與其他你建立的 view 檔案之間的關係。
 MARKDOWN
 end
 
 tools_and_references do
 message <<-MARKDOWN
 * Devise: 使用者認證之神器！可以在 https://github.com/plataformatec/devise 得到更多相關資訊
- * 在讀我檔中往下捲到 "Getting Started." 你必須把一些東西加到你的 Gemfile 之中，如果你不記得該怎麼做，就跟你旁邊的同學尋求協助吧！
- * 也許你不只是要從 devise 的讀我檔中開始輸入指令。也許你需要先把整個段落讀完。(也就是說不要漏掉 bundle ！)
+ * 在 Readme 檔中往下捲到 "Getting Started." 你必須把一些東西加到你的 Gemfile 之中，如果你不記得該怎麼做，就跟你旁邊的同學尋求協助吧！
+ * 你應該不會只想要直接看 devise 的 readme 就開始打指令。也許你應該會想要先整段讀完再動手。。(也就是說不要漏掉 bundle ！)
 MARKDOWN
 end
 
 hints do
 message <<-MARKDOWN
-* 讀我檔是你永遠的好朋友，請愛上它們！
-* 替 Model 取名的命名規則是首字大寫，譬如說： User 。
-* 當你執行 `rails generate devise:install` 這個指令時，你會得到關於設定的五個介紹，第三個跟第四個是不錯的建議。
+* Readme 檔是你永遠的好朋友，請愛上它們！
+* 替 Model 取名的命名規則是首字大寫，像是： User 。
+* 當你執行 `rails generate devise:install` 這個指令時，你會得到關於設定的五個指示，第三個跟第四個是不錯的建議。
 * routes 檔案中的註解也有很多常見的路由設定方式，這也是你的好朋友。
 * Devise 有一些魔法可以幫助你建立登出連結，執行 `rake routes` 然後找找哪個路由可以幫助你登出。
-* 你也許要顯示當前登入的使用者的 E-mail 如果他們確定登入了，對吧？ Devise 有一個 helper 可以幫你。
-* 非必要：任何時候你在 Rails 中建立一個 model 的時候，你可以用 Rails Console 直接與該 Model 的方法、行為作互動。
+* 你應該會想要顯示當前登入的使用者的 E-mail 如果他們確定登入了，對吧？ Devise 有一個 helper 可以幫你。
+* 非必要：每當你在 Rails 中建立一個 model 的時候，你可以用 Rails Console 直接與該 Model 的方法、行為作互動。
 MARKDOWN
 end
 
