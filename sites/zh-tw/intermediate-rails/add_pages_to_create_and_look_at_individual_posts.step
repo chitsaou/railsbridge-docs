@@ -26,13 +26,13 @@ end
 
 discussion do
 message <<-MARKDOWN
-* 你如何建立一個資源？你需要傳入哪些參數？
-* 那麼： Rails 的資源產生器替你做了哪些事情？找出所有新增的檔案。或許也可以把這些東西寫在白板上討論。
+* 你如何建立一個 resource （資源）？你需要傳入哪些參數？
+* 那麼： Rails 的資源產生器替你做了哪些事情？把所有新增的檔案都找出來。或許也可以把這些東西寫在白板上討論。
 * 如何讓使用者與一篇文章建立起關聯？
   * 當你建立 Post Model 的時候你必須加入什麼東西到 migration 檔案？
   * 這層關聯是如何在 User 與 Post model 之間溝通的？
   * 當你建立一篇文章的時候你會如何將文章與當前登入的使用者建立關聯？
-* 在 posts controller 中 `new` 與 `create` 兩個方法之間的差異是什麼？以及它們是如何與建立一篇新文章的表單有關聯的？
+* 在 posts controller 中 `new` 與 `create` 兩個 method （方法）之間的差異是什麼？以及它們是如何與建立一篇新文章的表單有關聯的？
 MARKDOWN
 end
 
@@ -47,11 +47,11 @@ end
 
 hints do
 message <<-MARKDOWN
-* Rails 有一些內建的的方法在兩個 model 間建立關聯。看一下上面 Rails Guides 連結中的提示來協助你去建立當前登入者與文章作者之間的關聯！
-* 別直接用 HTML 撰寫表單！你沒必要這樣做！ Rails 當然也會幫你處理掉這一塊。 看一下上面 Rails Guide 的連結！
-* Rails 有一個內建方法在有什麼東西儲存在資料庫時會去記錄。也許在顯示文章的建立日期、時間時會方便一點。
-* 現在，我們要在顯示文章作者時顯示使用者的 E-mail。你可以再等一下的時候新增名字或其他識別的方式！（還有，你如果要從 User model 中取得使用者的 E-mail 時，你也必須要有一個給 Post 資源用的 user 參數。）
-* 你需要一個 `create` 方法去儲存你傳送過來的資料。在 Getting Started 文件中的這一個章節裡往下捲一點點有非常有幫助的資訊，而且可以看看 create 方法的範例。 <http://guides.rubyonrails.org/getting_started.html#creating-new-posts>.
+* Rails 提供一些方法可以把兩個 model 關聯起來。上面 RailsGuide 的連結裡面，有提示教你如何把文章的作者設成當前登入者喔！
+* 別直接用 HTML 撰寫表單！你沒必要這樣做！ Rails 當然也會幫你處理掉這一塊。 看一下上面 RailsGuide 的連結！
+* Rails 提供了某個方法可以記錄資料什麼時候存入資料庫的。也許在顯示文章的建立日期、時間時會方便一點。
+* 現階段，我們要顯示文章作者的時候，先拿使用者的 Email 來充當。在等一下的時候你可以新增名字或其他識別名稱！（還有，就算只是要從 User model 拿到當前使用者的 email，你還是要在 Post 資源加上 user 參數。）
+* 你需要一個 `create` method 來儲存你傳送過來的資料。在 Getting Started 文件中的這一個章節裡往下捲一點點有非常有幫助的資訊，而且可以看看 create method 的範例。 <http://guides.rubyonrails.org/getting_started.html#creating-new-posts>.
 MARKDOWN
 end
 
