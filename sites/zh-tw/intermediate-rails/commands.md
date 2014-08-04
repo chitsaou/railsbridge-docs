@@ -1,79 +1,79 @@
 ## Ruby
 
-Open an interactive Ruby terminal (type 'exit' to quit)
+要開啟 Ruby 互動式終端界面 (irb) 的話（輸入 'exit' 可以跳出）
 
     irb
 
-Run a ruby program named FILENAME.rb
+要執行名為 FILENAME.rb 的 ruby 程式的話
 
     ruby FILENAME.rb
 
-Installs a gem called GEMNAME
+要安裝一個名為 GEMNAME 的 gem
 
     gem install GEMNAME
 
-Installs gems listed in the `Gemfile`
+要安裝被列在 `Gemfile` 裡面的 gems 的話
 
     bundle install
 
 ## Rails
 
-Create a new rails project called `NAME`
+要開名為 `NAME` 的 Rails 專案的話
 
     rails new NAME
     
-Auto-generate routes (this can also be done manually)
+要自動依序建立檔案的話 （其實也可以手動建立）
 
     rails generate scaffold
 
-Create a new [Rails model]
+要建立新的 [Rails model] 的話
 
     rails generate model MODELNAME
 
-Update the database to match what you have described in your code
+要把資料庫更新到跟程式碼所寫的一致的話
 
     rake db:migrate
 
-Run the application locally (Ctrl-C to quit)
+要在本機跑 Rails 應用程式的話（Ctrl+C 來跳出）
 
     rails server
 
-Start an interactive Ruby session that knows about your Rails models (type 'exit' to quit)
+要啟動一個認得 Rails models 的 Ruby 互動式終端機的話（輸入 'exit' 來跳出）
 
     rails console
 
-Print the routes for your application
+要列出你 Rails 應用程式的所有路由（routes）的話
 
     rake routes
 
 ## Browser
 
-Go to the root page of your rails application
+要前往你 Rails 應用程式的首頁的話
 
     http://localhost:3000
 
 ## Git
 
-Creates a new git repository in your current directory.
+要在當前目錄建立新的 git repository（倉庫）的話
 
     git init
 
-Add the current directory, and all sub directories, to your git repository.
+要把當前目錄及所有子目錄都加入 git repository 的話
 
     git add .
 
-Tells you what you've added, deleted, and changed between your current directory and you local git repository.
+以下指令會告訴你，當前目錄和 git repository 比起來，有哪些檔案新增、刪除、修改過了。
 
     git status
 
-Prints the difference between FILENAME and what is in your local git repository.
+以下指令會列出 FILENAME 這檔案跟本地的 git repository 比起來有哪些差異。
 
     git diff FILENAME
 
-Commit the files you've added to the local repository.
+要把目前新增的修訂 commit 進本地的 git repository 的話
 
     git commit -m "Describe what has changed, and why" .
 
-Push *committed* changes to the remote server.
+要把 *commit* 過的異動送到遠端 server 的話
 
     git push

@@ -1,44 +1,44 @@
 requirements do
   message <<-MARKDOWN
-* The site should use Bootstrap for a superfun modern look. 
-* When logged in, the user's email address should appear in the upper-right corner of a navigation bar.
+* 這個網站要用 Bootstrap 搞出一個潮潮的外觀。
+* 登入之後，使用者的 E-mail 必須顯示在導覽列的右上角。
 MARKDOWN
   img class: 'noborder', src: 'img/header.png'
 end
 
 important do
-  h2 "Timebox It!"
-  p "The purpose of this section is to make your app a bit prettier and demonstrate how to add CSS frameworks like Bootstrap using the Gemfile. Don't get snagged on the details of getting your CSS exactly right, unless that's valuable to you."
+  h2 "限時挑戰"
+  p "這個章節最主要的目的是讓你的應用程式更漂亮一點點，並且展示如何透過 Gemfile 添加像是 Bootstrap 這樣的 CSS Framework 到你的應用程式中。別為了讓 CSS 正確而陷入僵局，除非對你來說這是真的有價值的。"
 end
 
 discussion do
 message <<-MARKDOWN
-* Chrome developer tools / Firefox Firebug plugin — how to use ’em!
-* What’s Bootstrap and (optional) why is everyone totally in love with it (or at least using it all over the place)?
-* Maybe review the home/index.html.erb view file as it relates to the layouts/application.html.erb view file again, and where you might want to make some edits to take advantage of bootstrap.
-* Someone should explain how erb works — you'll be using it to show the user email address in right side
+* Chrome 開發者工具 / Firefox Firebug 外掛 - 如何使用它們？
+* Bootstrap 是什麼？為什麼大多數人都喜歡用它？（此題可跳過，或至少討論為什麼到處都有人用。）
+* 也許可以重審一下 home/index.html.erb 檔案與 layouts/application.html.erb 之間的關係，你或許會想要四處改改來好好利用 Bootstrap 。
+* 找個誰來解釋一下 erb 是怎樣運作的，你會使用它來在網頁的右邊顯示已登入使用者的 E-mail 。
 MARKDOWN
 end
 
 tools_and_references do
 message <<-MARKDOWN
-* A gem for Bootstrap!! Here's where to get it https://github.com/twbs/bootstrap-sass
-* Bootstrap docs: http://getbootstrap.com/css/
-* Here's a link to the navbar section: http://getbootstrap.com/components/#nav
-* Reference for HTML and CSS: http://www.htmldog.com/
+* 一個 Bootstrap 的 Gem ！你可以從 https://github.com/twbs/bootstrap-sass 得到它
+* Bootstrap 文件： http://getbootstrap.com/css/
+* 這是導覽列的文件： http://getbootstrap.com/components/#nav
+* HTML 與 CSS 的教學： http://www.htmldog.com/
 MARKDOWN
 end
 
 hints do
 message <<-MARKDOWN
-* Don't forget to read the readme!
-* There are a couple of Bootstrappy ways to move text around — look for "Component alignment" in the docs. 
-* Devise has a helper method for accessing the current user - go back to the devise readme to find it.
+* 別忘記閱讀 Readme 檔！
+* Bootstrap 提供幾種方式來移動文字的位置，找一下 "Component alignment" 這個部分的說明吧。
+* Devise 有一個 helper 函式可以取得當前登入的使用者，回去看一下 devise 的文件吧。
 MARKDOWN
 end
 
-h1 "Really Big Hint"
-message "If you can't get the right HTML mojo for the Bootstrap nav bar, or want to move on quickly to the next page, here's some code you can drop into your layout (after installing Bootstrap!) that should work. The code should go immediately after your &lt;body&gt; tag."
+h1 "真的超有用的提示"
+message "如果你不能感受到 Bootstrap 導覽列的 HTML 的魅力，或者想要快一點到下一個單元，這裡有一些程式碼可以給你扔進去到你的 layout 裏面 (在安裝 Bootstrap 之後！)，應該是可以運作的。這些 HTML 要放在你的 &lt;body&gt; 標籤之後。"
 pre <<-MARKDOWN
 <div class="navbar navbar-default">
   <div class="container">
@@ -53,6 +53,6 @@ pre <<-MARKDOWN
 </div>
 MARKDOWN
 
-message "***You still have to add code to show the real logged in user and add a real log out button!***"
+message "***你還是得要加上顯示成功登入的使用者以及登出的按鈕的 HTML 碼。***"
 
 next_step "add_pages_to_create_and_look_at_individual_posts"

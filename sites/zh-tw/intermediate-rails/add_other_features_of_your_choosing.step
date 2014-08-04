@@ -1,16 +1,16 @@
 message <<-MARKDOWN
-What other features do you want?
+還想要哪些其他功能？
 
-Suggestions:
+建議：
 
-* Profile pages for users (enter user’s name or details, have it display alongside posts).
-* Post/Comment history for individual users (on their profile page?).
-* Easy user profile pictures with [Gravatar](https://gravatar.com/).
-* Add login options with [Omniauth](https://github.com/intridea/omniauth), including Twitter, Facebook, Github, Google, and more.
-  * Check out the Devise [documentation for integrating with Omniauth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview).
-* Fiddle with the layout of the show page so it doesn't look bad. If it looks bad. It probably looks great.
-* Perhaps fancier post markup with Markdown or something similar.
-* Deploy to Heroku and send your message board to all your friends!
+* 使用者的個人檔案頁面（輸入使用者的名字或其他資訊，可以顯示在文章的側邊）。
+* 顯示使用者的文章 / 回應的歷史記錄（或許在他們的個人檔案頁面上顯示？）。
+* 用 [Gravatar](https://gravatar.com/) 輕輕鬆鬆就顯示使用者的大頭照。
+* 用 [Omniauth](https://github.com/intridea/omniauth) 來增加其他的登入選項，像 Twitter, Facebook, GitHub, Google 等等。
+  * 順便讀一下 Devise [整合 Omniauth 的文件](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview) 。
+* 如果文章內容頁看起來不漂亮的話，隨意調一下它的排版來美化它。不過或許已經很漂亮了也說不定。
+* 也許可以把 Markdown 或其他類似的潮物整合進來。
+* 部署到 Heroku 並且把你的留言板網址給你的朋友們！
 
-## ...and that's that! Good luck! Make more things! Come back again!
+## ... 那就先這樣了，祝你好運！做出更多更棒的東西吧！下次見！
 MARKDOWN

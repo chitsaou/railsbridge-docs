@@ -1,9 +1,9 @@
 requirements do
 message <<-MARKDOWN
-* The user should see a 'New Reply' link or button on a post's show page which takes them to a form. The form should include the title of the post being replied to.
-* The user should be able to create a new reply to a post using the 'New Reply' form.
-* The user should see all the replies to a post on the post’s show page.
-* If the user doesn't submit all required fields, they should see some error messaging, but they shouldn't lose any of their work.
+* 使用者應該可以在文章的顯示頁面中看到一個「新增回應」的連結或按鈕，並且會帶使用者到一個表單。該表單應該要有想回應的文章的標題。
+* 使用者應該要可以在文章中用「新增回應」表單來新增一則回應。
+* 使用者應該會在文章的顯示頁面中看到所有給此文章的回應。
+* 如果使用者沒有輸入所有必填欄位就送出的話，他們應該會看到錯誤訊息，但是不會讓他們輸入過的內容消失。
 MARKDOWN
   table do
     tr do
@@ -27,9 +27,9 @@ end
 
 discussion do
 message <<-MARKDOWN
-* What is a nested resource? When is it appropriate and how does it help?
-* How do the `RepliesController` and `PostsController` interact?
-* What should happen to the routes file for this nesting business to work?
+* 什麼是 nested resource （巢狀資源）？什麼時候適合用？它有什麼用途？
+* `RepliesController` 以及 `PostsController` 是怎樣互動的？
+* 要怎麼改路由（routes）設定檔才能讓這種巢狀邏輯會動？
 MARKDOWN
 end
 

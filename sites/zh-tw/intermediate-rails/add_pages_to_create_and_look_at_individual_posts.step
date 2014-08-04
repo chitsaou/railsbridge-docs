@@ -1,8 +1,8 @@
 requirements do
 message <<-MARKDOWN
-* The user should be able to create a post with a title, author, date published, and content. The author should be the current user. 
-* The complete post should appear on its own page (aka its show page).
-* If the user doesn't submit all required fields, they should see some error messaging, but shouldn't lose any of their work.
+* 使用者應該要可以新增一篇含有標題、作者、發佈日期與內容的文章。而當前登入的使用者就是該篇文章作者。
+* 必須要有一個頁面顯示文章的完整內容（也就是文章內容頁）。
+* 如果使用者沒有寫完所有欄位就送出，那使用者就會看到一些錯誤訊息，但是不會讓他們輸入過的內容消失。
 MARKDOWN
   table do
     tr do
@@ -26,32 +26,32 @@ end
 
 discussion do
 message <<-MARKDOWN
-* How do you create a resource? What parameters do you need to pass?
-* Then: what did rails make for you when you used the resource generator? Find all the new files. Maybe even list them out on a whiteboard.
-* How do you associate a user with a post? 
-  * What did you have to put in the migration to create posts?
-  * How is this association communicated to the User and Post models?
-  * How will you associate the current user with a post when you create it? 
-* What's the difference between the `new` and `create` methods in the posts controller and how do these relate to the form to create a new post? 
+* 你如何建立一個 resource （資源）？你需要傳入哪些參數？
+* 那麼： Rails 的資源產生器替你做了哪些事情？把所有新增的檔案都找出來。或許也可以把這些東西寫在白板上討論。
+* 如何讓使用者與一篇文章建立起關聯？
+  * 當你建立 Post Model 的時候你必須加入什麼東西到 migration 檔案？
+  * 這層關聯是如何在 User 與 Post model 之間溝通的？
+  * 當你建立一篇文章的時候你會如何將文章與當前登入的使用者建立關聯？
+* 在 posts controller 中 `new` 與 `create` 兩個 method （方法）之間的差異是什麼？以及它們是如何與建立一篇新文章的表單有關聯的？
 MARKDOWN
 end
 
 tools_and_references do
 message <<-MARKDOWN
-* RailsGuides - Active Record Associations: <http://guides.rubyonrails.org/association_basics.html#the-belongs_to-association>.
+* RailsGuides - Active Record Associations （關聯）: <http://guides.rubyonrails.org/association_basics.html#the-belongs_to-association>.
 * RailsGuides - Form Helpers, section 2.2: <http://guides.rubyonrails.org/form_helpers.html#binding-a-form-to-an-object>
 * RailsGuides - Routes - CRUD, Verbs, and Actions: <http://guides.rubyonrails.org/routing.html#crud-verbs-and-actions>.
-* RailsGuides - Active Record Validations and Callbacks: <http://guides.rubyonrails.org/active_record_validations_callbacks.html>
+* RailsGuides - Active Record Validations and Callbacks （驗證與回呼）: <http://guides.rubyonrails.org/active_record_validations_callbacks.html>
 MARKDOWN
 end
 
 hints do
 message <<-MARKDOWN
-* Rails has some built in ways to associate one model with another. See the RailsGuides link above for hints on how to make a user the owner of a post!
-* Don't hand code the form! You don't have to! Rails will help. See RailsGuide link above! 
-* Rails has a built-in way to note when something was stored in the database. Probably handy for showing the date / time a post was created.
-* For now, we're going to use the user's email address when displaying a post's author. You can add names or other identifiers later! (Also, even though you're going to get the current user's email address from the User model, you'll still need a user parameter for your Post resource.)
-* You need a `create` method to store your post data - scroll down a little bit in this section of the Getting Started guide for very helpful information and to see an example of a create method: <http://guides.rubyonrails.org/getting_started.html#creating-new-posts>.
+* Rails 提供一些方法可以把兩個 model 關聯起來。上面 RailsGuide 的連結裡面，有提示教你如何把文章的作者設成當前登入者喔！
+* 別直接用 HTML 撰寫表單！你沒必要這樣做！ Rails 當然也會幫你處理掉這一塊。 看一下上面 RailsGuide 的連結！
+* Rails 提供了某個方法可以記錄資料什麼時候存入資料庫的。也許在顯示文章的建立日期、時間時會方便一點。
+* 現階段，我們要顯示文章作者的時候，先拿使用者的 Email 來充當。在等一下的時候你可以新增名字或其他識別名稱！（還有，就算只是要從 User model 拿到當前使用者的 email，你還是要在 Post 資源加上 user 參數。）
+* 你需要一個 `create` method 來儲存你傳送過來的資料。在 Getting Started 文件中的這一個章節裡往下捲一點點有非常有幫助的資訊，而且可以看看 create method 的範例。 <http://guides.rubyonrails.org/getting_started.html#creating-new-posts>.
 MARKDOWN
 end
 
