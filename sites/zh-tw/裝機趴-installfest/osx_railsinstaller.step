@@ -38,16 +38,16 @@ verify "successful installation" do
   result "/usr/bin/git"
 
   console "which ruby"
-  fuzzy_result "/usr/local/rvm/rubies/ruby-1.9.3{FUZZY}-p194{/FUZZY}/bin/ruby"
+  fuzzy_result "/usr/local/rvm/rubies/ruby-2.1.5{FUZZY}-p273{/FUZZY}/bin/ruby"
 
   console "which rails"
-  fuzzy_result "/usr/local/rvm/gems/ruby-1.9.3{FUZZY}-p194{/FUZZY}/bin/rails"
+  fuzzy_result "/usr/local/rvm/gems/ruby-2.1.5{FUZZY}-p273{/FUZZY}/bin/rails"
 
   console "ruby -v"
-  fuzzy_result "ruby 1.9.3{FUZZY}p194{/FUZZY}"
+  fuzzy_result "ruby 2.1.5{FUZZY}-p273{/FUZZY}"
 
   console "rails -v"
-  fuzzy_result "Rails 4.{FUZZY}1.x{/FUZZY}"
+  fuzzy_result "Rails 4.2{FUZZY}.x{/FUZZY}"
 end
 
 next_step "設定_git"

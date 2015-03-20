@@ -46,10 +46,10 @@ step "安裝 Ruby" do
 end
 
 step "安裝 Rails" do
-  console "gem install rails"
+  console "gem install rails -v 4.2 --no-ri"
   verify do
     console "rails -v"
-    fuzzy_result "Rails 4.{FUZZY}1.x{/FUZZY}"
+    fuzzy_result "Rails 4.2.{FUZZY}x{/FUZZY}"
   end
 end
 
@@ -62,10 +62,10 @@ verify "安裝沒問題" do
   fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
 
   console "which ruby"
-  fuzzy_result "/Users/alex/.rvm/rubies/ruby-{FUZZY}2.0.0-p247{/FUZZY}/bin/ruby"
+  fuzzy_result "/Users/alex/.rvm/rubies/ruby-{FUZZY}2.1.5-p273{/FUZZY}/bin/ruby"
 
   console "which rails"
-  fuzzy_result "/Users/alex/.rvm/gems/ruby-{FUZZY}2.0.0-p247{/FUZZY}/bin/rails"
+  fuzzy_result "/Users/alex/.rvm/gems/ruby-{FUZZY}2.1.5-p273{/FUZZY}/bin/rails"
 end
 
 next_step "設定_git"

@@ -9,7 +9,7 @@ step "跑 RailsInstaller" do
   message <<-MARKDOWN
   RailsInstaller 一鍵安裝包裡面有 Rails、Ruby、Git、SQLite。
 
-  請上 <http://railsinstaller.org/>，往下捲到 'Downloads' 那一段，然後下載 RailsInstaller for Windows/Ruby 1.9。
+  請上 <http://railsinstaller.org/>，往下捲到 'Downloads' 那一段，然後下載 RailsInstaller for Windows/Ruby 2.1.5。
 
   按兩下打開下載完成的安裝檔來啟動安裝程式。它問什麼都按下一步，一律預設值。
 
@@ -51,13 +51,13 @@ step "Windows 8 才要的──安裝 Node.js" do
   message "開機完成後，打開 **Command Prompt with Ruby and Rails**（見下文），然後檢查看看，"
 
   console "node -v"
-  fuzzy_result "v0{FUZZY}.8.x{/FUZZY}"
+  fuzzy_result "v0{FUZZY}.12.x{/FUZZY}"
 end
 
 step "升級 Rails" do
-  message "現在 RailsInstaller 幫我們安裝的是 Rails 3.2.x，不過我們要的是 4.x。要升級 Rails 很簡單："
+  message "現在 RailsInstaller 幫我們安裝的是 Rails 4.1.x，不過我們要的是 4.2。要升級 Rails 很簡單："
 
-  console "gem install rails"
+  console "gem install rails -v 4.2 --no-ri"
 
   message "……這樣就好了。新版 Rails！喔耶！"
 end
@@ -65,10 +65,10 @@ end
 step "確認一切正常" do
 
   console "ruby -v"
-  fuzzy_result "ruby 1.9.3{FUZZY}p125{/FUZZY}"
+  fuzzy_result "ruby 2.1.5"
 
   console "rails -v"
-  fuzzy_result "Rails 4.{FUZZY}1.x{/FUZZY}"
+  fuzzy_result "Rails 4.2.{FUZZY}x{/FUZZY}"
 
 end
 

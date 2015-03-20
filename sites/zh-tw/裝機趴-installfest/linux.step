@@ -67,7 +67,7 @@ end
 step "安裝 Rails" do
   message "打開終端機，執行以下指令來安裝 Rails。"
 
-  console "gem install rails"
+  console "gem install rails -v 4.2 --no-ri "
 end
 
 step "Sublime Text 2" do
