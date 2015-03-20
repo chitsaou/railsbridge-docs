@@ -4,6 +4,7 @@ step "知道你的 Mac OS X 版本" do
 * 按螢幕右上角的蘋果 Apple 圖示。
 * 選「關於這台 Mac」
 * 在跳出的「Mac OS X」視窗裡面會有版本號碼。
+  * 如果是 10.10開頭，你的是 **Yosemite**。
   * 如果是 10.9 開頭，你的是 **Mavericks**。
   * 如果是 10.8 開頭，你的是 **Mountain Lion**。
   * 如果是 10.7 開頭，你的是 **Lion**。
@@ -29,7 +30,7 @@ end
 
 step "選擇你的指南" do
   
-  option "Mavericks" do
+  option "Mavericks / Yosemite" do
     link "osx_rvm"
   end
   option "Mountain Lion/Lion/Snow Leopard" do
